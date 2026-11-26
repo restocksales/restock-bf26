@@ -1,7 +1,6 @@
 <!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
-<title>Black Friday Aged Care & Health Specials</title>
+<title>Black Friday Aged Care &amp; Health Specials</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-
 <style>
 :root {
   --bg: #EDEBE7; --bg2: #F3F2EF; --fg: #1A1A1A; --fg2: #555759; --fg3: #9A9B9D;
@@ -63,8 +62,8 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .card:hover .card-img img { transform: scale(1.04); }
 .card-img .no-img { font-size: 2rem; color: var(--fg3); font-family: var(--font-cond); font-weight: 700; }
 .disc-badge { position: absolute; top: 10px; right: 10px; background: var(--accent); color: #fff; font-size: .78rem; font-weight: 800; border-radius: 7px; padding: 5px 8px; text-align: center; line-height: 1.2; z-index: 1; }
-.card-body img.brand-logo { height:22px; width:auto; max-width:unset; margin-bottom:6px; display:block; }
 .card-body { padding: 14px 16px 16px; flex: 1; display: flex; flex-direction: column; gap: 8px; background: #fff; }
+.card-body img.brand-logo { height:22px; width:auto; max-width:unset; margin-bottom:6px; display:block; }
 .card-name { font-weight: 700; font-size: .95rem; line-height: 1.3; color: var(--fg); }
 .card-desc { font-size: .82rem; color: var(--fg2); line-height: 1.4; }
 .card-sizes { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 2px; }
@@ -124,7 +123,9 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 </style>
 
 <header class="site-header">
-  <a href="https://www.restock.com.au" target="_blank" style="display:flex;align-items:center;text-decoration:none;"><img src="https://cdn.klaviyomail.com/company/RTXMLp/images/images_restock-logo36a30.png" alt="RESTOCK" style="height:36px;width:auto;"></a>
+  <a href="https://www.restock.com.au" target="_blank" style="display:flex;align-items:center;text-decoration:none;">
+    <img src="https://cdn.klaviyomail.com/company/RTXMLp/images/images_restock-logo36a30.png" alt="RESTOCK" style="height:36px;width:auto;">
+  </a>
   <button class="btn-order-header" onclick="openDrawer()">📋 Email Order</button>
 </header>
 
@@ -213,31 +214,80 @@ const IMG_BASE = 'https://www.restock.com.au/productimages/';
 const ORDERS_EMAIL = 'orders@restock.com.au';
 const OFFER_ENDS = '4 December 2026';
 const PRODUCT_URLS = {
-  '653412B':'https://www.restock.com.au/653412B/Calibre-Level-2-Disposable-Isolation-Gown-Blue-Polypropylene-XL-%28100_or_ctn%29-one-si/pd.php',
+  '651304B':'https://www.restock.com.au/651304B/Protectaware-Premium-Ambidextrous-Blue-Silver-Lined-Gloves--_dash_-Large-Size-9-%2850_or_p/pd.php',
   '651064':'https://www.restock.com.au/P_dash_651062/Protectaware-Eco-Super-Stretch-Powder-Free-Blue-Gloves-%28200_or_pack%29/pd.php?ccode=651064',
-  '750214B':'https://www.restock.com.au/750214B/N95-BYD-NIOSH-Respirator-Flat-Fold-Masks-Blue-%2820_or_pack%29/pd.php',
-  '653414B':'https://www.restock.com.au/653414B/Calibre-Level-2-Disposable-Isolation-Gown-Yellow-Poly-propylene-XL-%28100_or_ctn%29-one/pd.php',
+  '461653B':'https://www.restock.com.au/461653B/Durapak-Heavy-Duty-CL25-Carton-Liner-630-x-630-x-380mm-Blue-%28500_or_ctn%29/pd.php',
   '651154':'https://www.restock.com.au/P_dash_651152/Protectaware-Premium-Nitrile-Long-Cuff-Powder-Free-Gloves-Blue-%28100_or_pack%29/pd.php?ccode=651154',
+  '770212':'https://www.restock.com.au/P_dash_770211/Protectaware-Disposable-Polypropylene-%28PP%29-Coveralls-White/pd.php?ccode=770212',
+  '752910':'https://www.restock.com.au/752910/Protectaware-Metal-Detectable-Reuseable-Corded-Earplug-Class-5-28dB-Blue-%28100_or_pa/pd.php',
   '517120':'https://www.restock.com.au/517120/Durelle-Premium-Blue-Slimline-Hand-Towel-200-Sheets-23-x-23cm-%2820-packs_or_ctn%29/pd.php',
+  '653106':'https://www.restock.com.au/P_dash_653113/Protectaware-Disposable-Polypropylene-Lab-Coat-No-Pocket-%28100_or_ctn%29/pd.php?ccode=653106',
   '407200':'https://www.restock.com.au/407200/Durelle-Manual-Autocut-White-Dispenser-%28each%29/pd.php',
+  '653044':'https://www.restock.com.au/653044/Protectaware-Ultimate-PE-Disposable-Hanging-Aprons-1550mm-Blue-%28500_or_ctn%29/pd.php',
   '651533':'https://www.restock.com.au/P_dash_651522/Protectaware-Premium-Polymer-Coated-Latex-Powder-Free-Gloves-%28100_or_pack%29/pd.php?ccode=651533',
+  '770204':'https://www.restock.com.au/P_dash_770201/Protectaware-White-Coverall-CE-Standards-Type-4%2C-5-_and_-6-%28each%29/pd.php?ccode=770204',
+  '753532':'https://www.restock.com.au/753532/Durapak-Premium-Machine-Tape-Clear-%28Hot-Melt-Alternative%29-48mm-x-1000m-%286-rolls_or_/pd.php',
+  '653134':'https://www.restock.com.au/P_dash_653113/Protectaware-Disposable-Polypropylene-Lab-Coat-No-Pocket-%28100_or_ctn%29/pd.php?ccode=653134',
+  '753528':'https://www.restock.com.au/753528/Durapak-Eco-Machine-15-Stretch-Film-Wrap-Clear-500mm-x-2174m_or_Roll-%28each%29/pd.php',
+  '770245':'https://www.restock.com.au/P_dash_770241/Protectaware-Type-5-_and_-6-White-Coverall-with-Hood-%28each%29/pd.php?ccode=770245',
   '428300':'https://www.restock.com.au/428300/Durelle-Premium-FSC-Mix-Autocut-Blue-Roll-Towel-1-Ply-21cm-x-300m-%286-rolls_or_pack%29/pd.php',
-  '653412A':'https://www.restock.com.au/653412A/Level-2-Disposable-Isolation-Gown-Blue-Polypropylene-XL-%2850_or_ctn%29-one-size-fits-a/pd.php',
-}
+  '651302A':'https://www.restock.com.au/P_dash_651302A/Durelle-Premium-Ambidextrous-Silver-lined-Gloves-Blue-%28pack%29/pd.php?ccode=651302A',
+  '770213A':'https://www.restock.com.au/770213A/Disposable-Polypropylene-%28PP%29-Coveralls-White-Large-%28Each%29/pd.php',
+  '653133A':'https://www.restock.com.au/653133A/Disposable-Polypropeleyne-Lab-Coat-No-Pocket-Green-Medium-%28100_or_ctn%29/pd.php',
+  '653104A':'https://www.restock.com.au/653104A/Disposable-Polypropylene-Lab-Coat-No-Pocket-White-Large-%28100_or_ctn%29/pd.php',
+  '758745':'https://www.restock.com.au/P_dash_758843/Protectaware-PU-Gumboot-Non-Safety-Toe-%28Pair%29/pd.php?ccode=758745',
+  '758855':'https://www.restock.com.au/P_dash_758899/Protectaware-PU-Gumboot-Safety-Toe-%28Pair%29/pd.php?ccode=758855',
+  '758843':'https://www.restock.com.au/P_dash_758843/Protectaware-PU-Gumboot-Non-Safety-Toe-%28Pair%29/pd.php?ccode=758843',
+  '758945':'https://www.restock.com.au/P_dash_758899/Protectaware-PU-Gumboot-Safety-Toe-%28Pair%29/pd.php?ccode=758945',
+  '758900':'https://www.restock.com.au/P_dash_758899/Protectaware-PU-Gumboot-Safety-Toe-%28Pair%29/pd.php?ccode=758900',
+};
 const WEB_URL = (code) => 'https://www.restock.com.au/Black-Friday-Specials/pl.php';
 
 const products = [
-  { id:2, brand:"Protectaware", name:"Eco Super Stretch Blue Gloves (200/pk)", desc:"TPE powder-free. Lightweight, ideal for care settings. ARTG Listed.", ctn:"10 packs of 200 per carton", sizes:[{code:"651063",label:"M"},{code:"651064",label:"L"},{code:"651065",label:"XL"}], img:"651064", onWeb:true, webCode:"651064", rrp:7.50, bf:3.75, disc:50 },
-  { id:5, brand:"Protectaware", name:"Premium Blue Nitrile Long Cuff Gloves (100/pk)", desc:"Extra-long cuff for clinical and care settings. Latex-free, roll beaded cuff.", ctn:"10 packs of 100 per carton", sizes:[{code:"651152",label:"S"},{code:"651153",label:"M"},{code:"651154",label:"L"}], img:"651154", onWeb:true, webCode:"651154", rrp:16.16, bf:8.93, disc:45 },
-  { id:8, brand:"Protectaware", name:"Polymer Coated Latex PF Gloves (100/pk)", desc:"Fully textured, superior puncture resistance. ARTG Listed.", ctn:"10 packs of 100 per carton", sizes:[{code:"651533",label:"M"},{code:"651535",label:"L"}], img:"651533", onWeb:true, webCode:"651533", rrp:9.69, bf:5.28, disc:46 },
-  { id:1, brand:"Protectaware", name:"Level 2 Isolation Gown Blue PP+PE (100/ctn)", desc:"AAMI Level 2. PP+PE 43gsm. Knitted cuffs, waist and neck ties. ARTG Listed.", ctn:"100 per carton", sizes:[{code:"653412B",label:"653412B"}], img:"653412B", onWeb:false, webCode:null, rrp:333.98, bf:166.99, disc:50 },
-  { id:4, brand:"Protectaware", name:"Level 2 Isolation Gown Yellow PP+PE (100/ctn)", desc:"AAMI Level 2, TGA approved. Knitted cuffs, waist and neck ties. ARTG Listed.", ctn:"100 per carton", sizes:[{code:"653414B",label:"653414B"}], img:"653414B", onWeb:false, webCode:null, rrp:233.14, bf:116.57, disc:50 },
-  { id:10, brand:"Protectaware", name:"Level 2 Isolation Gown Blue PP Singles (50/ctn)", desc:"Level 2 blue gown, 50 per carton. Knitted cuffs, waist and neck ties. ARTG Listed.", ctn:"50 per carton", sizes:[{code:"653412A",label:"653412A"}], img:"653412A", onWeb:true, webCode:"653412A", rrp:209.00, bf:104.50, disc:50 },
-  { id:3, brand:"BYD", name:"N95 BYD NIOSH Respirator Flat Fold Blue (20/pk)", desc:"95% filter efficiency, 160mmHg fluid resistance. FFP2 NR. Expiry 2028. NIOSH Approved & ARTG Listed.", ctn:"20 per pack", sizes:[{code:"750214B",label:"750214B"}], img:"750214B", onWeb:true, webCode:"750214B", rrp:35.16, bf:17.58, disc:50 },
-  { id:6, brand:"Durelle", name:"Blue Slimline Hand Towel 200 sheets 23x23cm (20 pks/ctn)", desc:"Premium blue multifold towel. Soft, strong, absorbent.", ctn:"20 packs per carton", sizes:[{code:"517120",label:"517120"}], img:"517120", onWeb:true, webCode:"517120", rrp:93.68, bf:50.96, disc:46 },
-  { id:9, brand:"Durelle", name:"FSC Autocut Blue Roll Towel 1ply 300m (6 rolls/ctn)", desc:"FSC certified, single-sheet dispensing reduces waste. FREE dispenser with 10 ctns.", ctn:"6 rolls per carton", sizes:[{code:"428300",label:"428300"}], img:"428300", onWeb:true, webCode:"428300", rrp:108.22, bf:56.84, disc:47 },
-  { id:7, brand:"Durelle", name:"Manual Autocut White Dispenser (each)", desc:"Sheet-by-sheet, hygienic dispensing. FREE with every 10 cartons of Blue Roll Towel.", ctn:"Sold individually", sizes:[{code:"407200",label:"407200"}], img:"407200", onWeb:true, webCode:"407200", rrp:146.15, bf:75.43, disc:48 },
+  { id:2, brand:"Protectaware", name:"Eco Super Stretch Blue Gloves (200/pk)", desc:"TPE powder-free. Lightweight, ideal for food service.", ctn:"10 packs of 200 per carton", sizes:[{code:"651063",label:"M"},{code:"651064",label:"L"},{code:"651065",label:"XL"}], img:"651064", onWeb:true, webCode:"651064", rrp:7.50, bf:3.75, disc:50 },
+  { id:5, brand:"Protectaware", name:"Premium Blue Nitrile Long Cuff Gloves (100/pk)", desc:"Extra-long cuff for dairy and food processing. Latex-free, textured grip.", ctn:"10 packs of 100 per carton", sizes:[{code:"651152",label:"S"},{code:"651153",label:"M"},{code:"651154",label:"L"}], img:"651154", onWeb:true, webCode:"651154", rrp:16.16, bf:8.93, disc:45 },
+  { id:8, brand:"Protectaware", name:"Polymer Coated Latex PF Gloves (100/pk)", desc:"Fully textured, superior puncture resistance. Latex powder-free.", ctn:"10 packs of 100 per carton", sizes:[{code:"651533",label:"M"},{code:"651535",label:"L"}], img:"651533", onWeb:true, webCode:"651533", rrp:9.69, bf:5.28, disc:46 },
+  { id:1, brand:"Protectaware", name:"Level 2 Isolation Gown Blue PP+PE (100/ctn)", desc:"Level 2 isolation gown, blue PP+PE fabric.", ctn:"100 per carton", sizes:[{code:"653412B",label:"653412B"}], img:"653412B", onWeb:true, webCode:"653412B", rrp:333.98, bf:166.99, disc:50 },
+  { id:4, brand:"Protectaware", name:"Level 2 Isolation Gown Yellow PP+PE (100/ctn)", desc:"Level 2 isolation gown, yellow PP+PE fabric.", ctn:"100 per carton", sizes:[{code:"653414B",label:"653414B"}], img:"653414B", onWeb:true, webCode:"653414B", rrp:233.14, bf:116.57, disc:50 },
+  { id:10, brand:"Protectaware", name:"Level 2 Isolation Gown Blue PP Singles (50/ctn)", desc:"Individually packed level 2 isolation gowns.", ctn:"50 per carton", sizes:[{code:"653412A",label:"653412A"}], img:"653412A", onWeb:true, webCode:"653412A", rrp:209.00, bf:104.50, disc:50 },
+  { id:3, brand:"BYD", name:"N95 BYD NIOSH Respirator Flat Fold Blue (20/pk)", desc:"NIOSH approved N95 respirator, flat fold design.", ctn:"20 per pack", sizes:[{code:"750214B",label:"750214B"}], img:"750214B", onWeb:true, webCode:"750214B", rrp:35.16, bf:17.58, disc:50 },
+  { id:6, brand:"Durelle", name:"Blue Slimline Hand Towel 200 sheets 23x23cm (20 pks/ctn)", desc:"Premium blue multifold towel. Ideal for clinical settings.", ctn:"20 packs per carton", uom:"cartons", sizes:[{code:"517120",label:"517120"}], img:"517120", onWeb:true, webCode:"517120", rrp:93.68, bf:50.96, disc:46 },
+  { id:9, brand:"Durelle", name:"FSC Autocut Blue Roll Towel 1ply 300m (6 rolls/ctn)", desc:"FSC certified, single-sheet dispensing reduces waste.", ctn:"6 rolls per carton", uom:"cartons", sizes:[{code:"428300",label:"428300"}], img:"428300", onWeb:true, webCode:"428300", rrp:108.22, bf:56.84, disc:47 },
+  { id:7, brand:"Durelle", name:"Manual Autocut White Dispenser (each)", desc:"Sheet-by-sheet, hygienic dispensing.", ctn:"Sold individually", sizes:[{code:"407200",label:"407200"}], img:"407200", onWeb:true, webCode:"407200", rrp:146.15, bf:75.43, disc:48 },
 ];
+function fmt(n){ return '$'+n.toFixed(2); }
+
+function renderGrid(){
+  const grid = document.getElementById('product-grid');
+  grid.innerHTML = products.map(p => {
+    const imgSrc = p.img ? IMG_BASE+p.img+'.jpg' : null;
+    const imgEl = imgSrc ? `<img src="${imgSrc}" alt="${p.name}" loading="lazy" onerror="this.parentNode.innerHTML='<span class=no-img>${p.id}</span>'">` : `<span class="no-img">${p.id}</span>`;
+    const chips = p.sizes.map(s=>{
+      const lbl = s.label === s.code ? s.code : `${s.label} <span style="font-weight:400;opacity:.7">${s.code}</span>`;
+      return `<span class="size-chip">${lbl}</span>`;
+    }).join('');
+    const webBtn = p.webCode ? `<a class="btn-web" href="${WEB_URL(p.webCode)}" target="_blank">🔑 Log in &amp; order</a>` : `<a class="btn-web" href="https://www.restock.com.au/site/pages/login.php" target="_blank">🔑 Log in &amp; order</a>`;
+    return `<div class="card"><div class="card-img">${imgEl}${p.disc>0?`<div class="disc-badge">${p.disc}%<br>off</div>`:''}</div><div class="card-body">${p.brand&&BRAND_LOGOS[p.brand]?`<img class="brand-logo" src="${BRAND_LOGOS[p.brand]}" alt="${p.brand}">`:p.brand?`<span style="font-size:.65rem;font-weight:700;color:#555;text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;display:block">${p.brand}</span>`:''}<div class="card-name">${p.name}</div><div class="card-desc">${p.desc}</div><div class="card-sizes">${chips}</div><div class="card-price"><div class="price-was">Was ${fmt(p.rrp)}</div><div class="price-bf">${fmt(p.bf)}</div></div></div><div class="card-actions">${webBtn}<button class="btn-email-order" onclick="openDrawerTo(${p.id})">✉ Email order</button></div></div>`;
+  }).join('');
+}
+
+function uomLabel(ctn,uom){
+  if(uom) return uom;
+  if(!ctn) return '';
+  const c = ctn.toLowerCase();
+  if(c.includes('pack')) return 'packs';
+  if(c.includes('ctn')||c.includes('carton')) return 'ctns';
+  if(c.includes('roll')) return 'rolls';
+  if(c.includes('each')||c.includes('individual')) return 'each';
+  return 'units';
+}
+
+function sizeRowsHtml(p){
+  const ctnNote = p.ctn ? `<div style="font-size:.73rem;color:var(--fg3);margin-bottom:6px">${p.ctn}</div>` : '';
+  const uom = uomLabel(p.ctn, p.uom);
+  const uomTag = uom ? `<span style="font-size:.72rem;color:var(--fg3);min-width:30px">${uom}</span>` : '';
+  if(p.sizes.length===1){
+    const s=p.sizes[0];
     return ctnNote+`<div class="size-row"><span class="size-label" style="flex-direction:column"><span style="font-weight:600">${s.code}</span></span><button class="size-qty-btn" onclick="adjSize('${p.id}','${s.code}',-1)">−</button><input class="size-qty-input" type="number" min="0" value="0" id="sq-${p.id}-${s.code}" oninput="recalc()"><button class="size-qty-btn" onclick="adjSize('${p.id}','${s.code}',1)">+</button>${uomTag}<span style="font-size:.75rem;color:var(--fg3);margin-left:4px">${fmt(p.bf)}</span></div>`;
   }
   return ctnNote+p.sizes.map(s=>`<div class="size-row"><span class="size-label"><span style="font-weight:600">${s.label}</span><span class="size-code">${s.code}</span></span><button class="size-qty-btn" onclick="adjSize('${p.id}','${s.code}',-1)">−</button><input class="size-qty-input" type="number" min="0" value="0" id="sq-${p.id}-${s.code}" oninput="recalc()"><button class="size-qty-btn" onclick="adjSize('${p.id}','${s.code}',1)">+</button>${uomTag}<span style="font-size:.75rem;color:var(--fg3);margin-left:4px">${fmt(p.bf)}</span></div>`).join('');
@@ -332,14 +382,32 @@ function validateFields(){
   return true;
 }
 
+function expandSize(label){
+  const map={'S':'Small','M':'Medium','L':'Large','XL':'X Large','2XL':'2X Large','3XL':'3X Large','4XL':'4X Large','5XL':'5X Large','6XL':'6X Large','7XL':'7X Large'};
+  return map[label] || label;
+}
+
 function generateOrder(){
   if(!validateFields()) return;
   const name=document.getElementById('cust-name').value.trim(), company=document.getElementById('cust-company').value.trim(), po=document.getElementById('cust-po').value.trim(), phone=document.getElementById('cust-phone').value.trim(), email=document.getElementById('cust-email').value.trim(), notes=document.getElementById('cust-notes').value.trim();
   const lines=[]; let subtotal=0;
-  products.forEach(p=>{ const sl=p.sizes.map(s=>{ const qty=parseInt(document.getElementById('sq-'+p.id+'-'+s.code)?.value)||0; if(qty>0){subtotal+=qty*p.bf; return`    ${p.sizes.length>1?s.label+' ('+s.code+')':s.code}: Qty ${qty}`;} return null;}).filter(Boolean); if(sl.length){lines.push(`  • ${p.name}  |  BF Price: ${fmt(p.bf)} ea`); sl.forEach(l=>lines.push(l));} });
+  products.forEach(p=>{
+    p.sizes.forEach(s=>{
+      const qty=parseInt(document.getElementById('sq-'+p.id+'-'+s.code)?.value)||0;
+      if(qty>0){
+        subtotal+=qty*p.bf;
+        const sizeStr = p.sizes.length>1 ? ` - ${expandSize(s.label)}` : '';
+        lines.push(`${qty} x ${s.code}${sizeStr} - ${p.name} - ${fmt(p.bf)} ea`);
+      }
+    });
+  });
   if(!lines.length){alert('Please enter a quantity for at least one item.');return;}
-  const gst=subtotal*0.1, total=subtotal+gst;
-  const body=['BLACK FRIDAY ORDER – Food & Pharmaceutical Indirect Consumables',`Offer ends ${OFFER_ENDS}`,``,`FROM:`,`  Name: ${name}`,`  Company: ${company}`,po?`  PO Number: ${po}`:null,`  Phone: ${phone}`,`  Email: ${email}`,notes?`  Notes: ${notes}`:null,``,`ORDER:`,...lines,``,`  Subtotal (ex GST):  ${fmt(subtotal)}`,`  GST (10%):          ${fmt(gst)}`,`  TOTAL (inc GST):    ${fmt(total)}`,``,`All prices ex GST. Subject to confirmation of stock availability.`].filter(l=>l!==null).join('\n');
+  const freeFreight=subtotal>=200;
+  const freight=freeFreight?0:25;
+  const gst=(subtotal+freight)*0.1;
+  const total=subtotal+freight+gst;
+  const freightLine=freight>0?`  Freight (ex GST):  $25.00`:null;
+  const body=['BLACK FRIDAY ORDER – Aged Care & Health Consumables',`Offer ends ${OFFER_ENDS}`,``,`FROM:`,`  Name: ${name}`,`  Company: ${company}`,po?`  PO Number: ${po}`:null,`  Phone: ${phone}`,`  Email: ${email}`,notes?`  Notes: ${notes}`:null,``,`ORDER:`,...lines,``,`  Subtotal (ex GST):  ${fmt(subtotal)}`,freightLine,`  GST (10%):          ${fmt(gst)}`,`  TOTAL (inc GST):    ${fmt(total)}`,``,freeFreight?`Freight: FREE (order over $200 ex GST)`:`Freight: $25.00 ex GST - add ${fmt(200-subtotal)} more (ex GST) to qualify for free freight.`,`Outside metro areas: freight to be confirmed before dispatch.`,``,`All prices ex GST. Subject to confirmation of stock availability.`].filter(l=>l!==null).join('\n');
   const subject=`Black Friday Order – ${company||name}`;
   const mailtoUrl=`mailto:${ORDERS_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   const fullText=`TO: ${ORDERS_EMAIL}\nSUBJECT: ${subject}\n\n${body}`;

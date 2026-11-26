@@ -22,7 +22,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .btn-order-header:hover{opacity:.9}
 .hero{background:var(--hero-bg);padding:36px max(16px,env(safe-area-inset-left,0px)) 32px;text-align:center}
 .hero-eyebrow{font-family:var(--font-cond);font-weight:700;font-size:1rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
-.hero h1{font-family:var(--font-cond);font-weight:900;font-size:clamp(2.5rem,9vw,4.5rem);color:var(--hero-fg);line-height:1.05;text-wrap:balance;margin-bottom:10px}
+.hero h1{font-family:var(--font-cond);font-weight:900;font-size:clamp(2rem,7vw,3.4rem);color:var(--hero-fg);line-height:1.05;text-wrap:balance;margin-bottom:10px}
 .hero h1 em{color:var(--accent);font-style:normal}
 .hero-sub{color:#A8A8AA;font-size:.95rem;margin-bottom:16px}
 .hero-badges{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:16px}
@@ -43,22 +43,22 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .section-title::before{content:"";display:block;width:4px;height:18px;background:var(--accent);border-radius:2px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
 .card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column}
-.card-img{aspect-ratio:4/3;overflow:hidden;background:#fff;display:flex;align-items:center;justify-content:center;position:relative}
+.card-img{aspect-ratio:4/3;overflow:hidden;background:#fff;display:flex;align-items:center;justify-content:center;position:relative}.disc-badge{position:absolute;top:10px;right:10px;background:var(--accent);color:#fff;font-size:.75rem;font-weight:800;border-radius:7px;padding:5px 8px;text-align:center;line-height:1.2;z-index:1}.card-body img.brand-logo{height:22px;width:auto;max-width:unset;margin-bottom:6px;display:block}
 .card-img img{width:100%;height:100%;object-fit:contain;padding:10px;transition:transform .2s ease}
 .card:hover .card-img img{transform:scale(1.04)}
-.disc-badge{position:absolute;top:10px;right:10px;background:var(--accent);color:#fff;font-size:.75rem;font-weight:800;border-radius:7px;padding:5px 8px;text-align:center;line-height:1.2;z-index:1}.card-body img.brand-logo{height:22px;width:auto;max-width:unset;margin-bottom:6px;display:block}.card-img .no-img{font-size:1.5rem;color:var(--fg3);font-family:var(--font-cond);font-weight:700}
-.card-body{padding:12px 14px 14px;flex:1;display:flex;flex-direction:column;gap:6px;background:#fff}
+.card-img .no-img{font-size:1.5rem;color:var(--fg3);font-family:var(--font-cond);font-weight:700}
+.card-body{padding:12px 14px 14px;flex:1;display:flex;flex-direction:column;gap:6px}
 .card-name{font-weight:700;font-size:.9rem;line-height:1.3;color:var(--fg)}
 .card-desc{font-size:.78rem;color:var(--fg2);line-height:1.4}
 .chips{display:flex;flex-wrap:wrap;gap:3px;margin-top:2px}
 .chip{background:var(--bg2);border:1px solid var(--border);border-radius:4px;padding:1px 6px;font-size:.72rem;font-weight:600;color:var(--fg2)}
 .card-price{display:flex;align-items:center;gap:8px;margin-top:auto;padding-top:8px;flex-wrap:wrap}
-
-.price-was{font-size:.82rem;font-weight:600;color:var(--fg2);text-decoration:line-through;margin-bottom:2px}
-
+.price-was-now{display:flex;flex-direction:column;gap:1px}
+.price-rrp{font-size:.78rem;color:var(--fg3);text-decoration:line-through}
+.price-rrp::before{content:'Was ';font-weight:400}
 .price-bf{font-family:var(--font-cond);font-weight:900;font-size:1.4rem;color:var(--accent);line-height:1}
 
-
+.price-disc{background:var(--red-bg);color:var(--red);border-radius:4px;padding:2px 6px;font-size:.74rem;font-weight:700;align-self:center}
 .card-actions{display:flex;gap:6px;padding:0 14px 12px;flex-wrap:wrap}
 .btn-web{flex:1;min-width:100px;background:var(--accent);color:var(--accent-fg);border:none;border-radius:6px;padding:8px 10px;font-family:var(--font);font-weight:700;font-size:.78rem;cursor:pointer;text-align:center;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:4px}
 .btn-web:hover{opacity:.9}
@@ -123,11 +123,14 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 </header>
 
 <section class="hero">
-  <div class="hero-eyebrow">Black Friday 2026 Specials</div>
-  <h1>Up to <em>Half Price</em></h1>
+  <div class="hero-eyebrow" id="hero-eyebrow">Black Friday 2026 &middot; Your Specials</div>
+  <h1>Up to <em>Half Price</em><br>PPE &amp; Consumables</h1>
   <p class="hero-sub">Ends Friday 4 December 2026 &middot; While stocks last &middot; All prices ex GST</p>
-  
-  
+  <div class="hero-badges">
+    <span class="badge" id="badge-count">Loading...</span>
+    <span class="badge">Up to 50% off</span>
+  </div>
+  <p class="hero-big-disc">UP TO 50% OFF</p>
 </section>
 
 <div class="notice-banner">
@@ -200,6 +203,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 
 <script>
 const IMG='https://www.restock.com.au/productimages/';
+const BRAND_LOGOS={'Protectaware':'https://cdn.klaviyomail.com/company/RTXMLp/images/a26e353a-903f-4b07-bf98-5703f81d1778.png','Durelle':'https://cdn.klaviyomail.com/company/RTXMLp/images/a0c132e5-31b1-422a-aea4-e0b210db5862.png','Durapak':'https://cdn.klaviyomail.com/company/RTXMLp/images/9e1c90ef-0741-469b-b93d-022cf80a0221.png','Eurosan':'https://cdn.klaviyomail.com/company/RTXMLp/images/99aab734-bdb5-4d07-a29c-1952a1e3979f.png'};
+
 const EMAIL='orders@restock.com.au';
 const ENDS='4 December 2026';
 const GROUPS={"01":[2,3,5,6,8,9,10,12,13,14,15,16,17,19,20,26,28,29,30],"02":[2,3,5,8,9,10,11,12,13,14,15,16,17,19,20,26,28,29,30,31],"03":[2,3,5,6,8,9,10,11,12,13,14,15,17,19,20,26,28,29,30,31],"04":[2,3,5,6,8,9,11,12,13,14,15,16,17,19,20,26,28,29,30,31],"05":[2,3,6,8,9,10,11,12,13,14,15,16,17,19,20,26,28,29,30,31],"06":[2,3,5,6,8,9,10,11,12,14,15,16,17,19,20,26,28,29,30,31],"07":[3,5,6,8,9,10,11,12,13,14,15,16,17,19,20,26,28,29,30,31],"08":[2,3,5,6,8,10,11,12,13,14,15,16,17,19,20,26,28,29,30,31],"09":[2,3,5,6,8,9,10,11,12,13,14,16,17,19,20,26,28,29,30,31],"10":[2,3,5,6,8,9,10,11,12,13,14,15,16,17,19,20,26,28,29],"11":[2,3,5,6,8,9,10,11,12,13,14,15,16,17,19,26,28,29,30,31],"12":[2,3,5,6,9,10,11,12,13,14,15,16,17,19,20,26,28,29,30,31],"13":[2,3,5,6,8,9,10,11,12,13,15,16,17,19,20,26,28,29,30,31],"14":[2,3,5,8,9,10,11,12,13,14,15,16,17,19,20,26,28,30,31],"15":[2,3,5,6,8,9,10,11,12,13,14,15,16,17,20,26,28,29,30,31],"16":[2,3,5,6,8,9,10,11,12,13,14,15,16,19,20,26,28,29,30,31],"17":[2,3,5,6,8,9,10,11,12,13,14,15,17,19,20,26,28,29,30,31],"18":[2,5,6,8,9,10,11,12,13,14,15,16,17,19,20,26,28,29,30,31],"19":[2,3,5,6,8,9,10,11,12,13,14,15,16,17,19,20,26,29,30,31],"20":[2,3,5,6,8,9,10,11,12,13,14,15,16,17,19,20,28,29,30,31],"21":[2,3,5,6,8,9,10,11,12,13,14,15,16,17,19,20,26,28,30,31],"22":[2,3,6,8,9,10,11,12,13,14,15,16,17,19,20,26,28,29,30,31],"23":[2,3,5,6,8,9,10,11,13,14,15,16,17,19,20,26,28,29,30,31],"24":[2,3,5,6,8,9,10,11,12,13,14,15,16,17,19,20,26,28,29,31],"25":[2,3,5,6,8,9,10,11,12,13,14,15,16,17,19,20,26,28,29,30],"26":[2,3,5,8,9,10,11,12,13,14,15,16,17,19,20,26,28,29,30,31],"27":[2,3,5,6,8,9,10,11,12,13,15,16,17,19,20,26,28,29,30,31],"28":[2,3,5,6,8,9,10,11,12,13,14,15,16,17,20,26,28,29,30,31],"29":[2,3,5,6,8,9,10,11,12,13,14,15,16,19,20,26,28,29,30,31],"30":[2,3,5,6,9,10,11,12,13,14,15,16,17,19,20,26,28,29,30,31],"31":[2,3,5,6,8,9,10,11,12,14,15,16,17,19,20,26,28,29,30,31],"32":[2,3,5,6,8,9,10,11,12,13,14,15,17,19,20,26,28,29,30,31],"33":[2,3,5,6,8,9,10,11,12,13,14,15,16,17,19,26,28,29,30,31],"34":[2,3,5,6,8,9,10,11,12,13,14,15,16,17,19,20,26,28,30,31],"35":[2,3,5,6,8,9,10,11,12,13,14,15,16,17,19,20,26,29,30,31],"36":[2,3,5,6,8,9,10,11,12,13,14,15,16,17,19,20,28,29,30,31],"37":[2,3,5,6,8,9,10,11,12,13,14,16,17,19,20,26,28,29,30,31],"38":[2,3,5,6,8,9,10,11,12,13,14,15,17,19,20,26,28,29,31],"39":[2,3,5,6,8,9,10,11,12,13,14,15,16,17,20,26,28,29,30],"40":[2,3,5,6,8,9,10,11,12,13,14,15,16,19,20,26,28,29,31],"41":[2,3,5,6,8,9,10,11,12,13,14,15,16,17,19,20,26,28,29],"42":[2,3,5,6,8,9,10,11,12,13,14,15,16,17,19,20,26,28,30],"43":[2,3,5,6,8,9,10,11,12,13,14,15,16,17,19,20,26,29,30],"44":[2,3,5,6,8,9,10,12,13,14,15,16,17,19,20,26,28,29,30],"45":[2,3,5,6,8,9,10,11,12,13,14,15,17,19,20,28,29,30,31],"46":[2,5,6,8,9,10,11,12,13,14,15,16,17,19,20,26,28,29,30]};
@@ -229,11 +234,11 @@ if(!famIds){
       const lbl=s.l===s.c?s.c:s.l+' <span style="font-weight:400;opacity:.7">'+s.c+'</span>';
       return '<span class="chip">'+lbl+'</span>';
     }).join('');
-    return '<div class="card"><div class="card-img">'+imgEl+'</div>'
-      +'<div class="card-body">'+(p.brand&&BRAND_LOGOS[p.brand]?'<img class="brand-logo" src="'+BRAND_LOGOS[p.brand]+'" alt="'+p.brand+'">':'')+'<div class="card-name">'+p.name+'</div>'
+    return '<div class="card"><div class="card-img">'+imgEl+(p.disc>0?'<div class="disc-badge">'+p.disc+'%<br>off</div>':'')+'</div>'
+      +'<div class="card-body">'+(p.brand&&BRAND_LOGOS[p.brand]?'<img class="brand-logo" src="'+BRAND_LOGOS[p.brand]+'" alt="'+p.brand+'">':p.brand&&p.brand==='BYD'?'<span style="font-size:.62rem;font-weight:700;color:#555;text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;display:block">BYD</span>':p.brand&&p.brand==='Assorted Brands'?'<span style="font-size:.62rem;font-weight:700;color:#555;text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;display:block">Assorted Brands</span>':'')+'<div class="card-name">'+p.name+'</div>'
       +'<div class="card-desc">'+p.desc+'</div>'
       +'<div class="chips">'+chips+'</div>'
-      +'<div class="card-price"><div class="price-was">Was '+fmt(p.rrp)+'</div><div class="price-bf">'+fmt(p.bf)+'</div></div>'
+      +'<div class="card-price"><div class="price-was-now"><span class="price-rrp">RRP '+fmt(p.rrp)+'</span><span class="price-bf">'+fmt(p.bf)+'</span></div>'
       +(p.disc>0?'<span class="price-disc">'+p.disc+'% off</span>':'')+'</div></div>'
       +'<div class="card-actions">'
       +'<a class="btn-web" href="https://www.restock.com.au/Black-Friday-Specials/pl.php" target="_blank">&#x1F511; Log in &amp; order</a>'
