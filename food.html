@@ -29,8 +29,8 @@
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; }
 body { font-family: var(--font); background: var(--bg); color: var(--fg); font-size: 15px; line-height: 1.5; padding-left: max(0px, env(safe-area-inset-left, 0px)); padding-right: max(0px, env(safe-area-inset-right, 0px)); }
-.site-header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 100; background: var(--hero-bg); border-bottom: 3px solid var(--accent); padding: 10px max(16px, env(safe-area-inset-left, 0px)); display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 101; background: var(--hero-bg); }
+.site-header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 100; background: #fff; border-bottom: 3px solid var(--accent); padding: 10px max(16px, env(safe-area-inset-left, 0px)); display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 101; background: #fff; }
 .site-header .logo-img { height: 36px; width: auto; }
 .btn-order-header { background: var(--accent); color: var(--accent-fg); border: none; border-radius: 6px; padding: 8px 16px; font-family: var(--font); font-weight: 700; font-size: .85rem; cursor: pointer; white-space: nowrap; }
 .btn-order-header:hover { opacity: .9; }
@@ -57,22 +57,20 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .section-title::before { content: ""; display: block; width: 4px; height: 18px; background: var(--accent); border-radius: 2px; }
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
 .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; display: flex; flex-direction: column; }
-.card-img { aspect-ratio: 4/3; overflow: hidden; background: var(--bg2); display: flex; align-items: center; justify-content: center; }
+.card-img { aspect-ratio: 4/3; overflow: hidden; background: #fff; display: flex; align-items: center; justify-content: center; }
 .card-img img { width: 100%; height: 100%; object-fit: contain; padding: 12px; transition: transform .2s ease; }
 .card:hover .card-img img { transform: scale(1.04); }
 .card-img .no-img { font-size: 2rem; color: var(--fg3); font-family: var(--font-cond); font-weight: 700; }
-.card-body { padding: 14px 16px 16px; flex: 1; display: flex; flex-direction: column; gap: 8px; }
+.card-body { padding: 14px 16px 16px; flex: 1; display: flex; flex-direction: column; gap: 8px; background: #F3F2EF; border-top: 1px solid var(--border); }
 .card-name { font-weight: 700; font-size: .95rem; line-height: 1.3; color: var(--fg); }
 .card-desc { font-size: .82rem; color: var(--fg2); line-height: 1.4; }
 .card-sizes { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 2px; }
 .size-chip { background: var(--bg2); border: 1px solid var(--border); border-radius: 4px; padding: 2px 7px; font-size: .75rem; font-weight: 600; color: var(--fg2); }
 .card-price { display: flex; align-items: center; gap: 10px; margin-top: auto; padding-top: 10px; flex-wrap: wrap; }
-.price-was-now { display:flex; flex-direction:column; gap:1px; }
-.price-rrp { font-size: .8rem; color: var(--fg3); text-decoration: line-through; }
-.price-rrp::before { content: 'Was '; font-weight:400; }
-.price-bf { font-family: var(--font-cond); font-weight: 900; font-size: 1.6rem; color: var(--accent); line-height:1; }
-.price-bf::before { content: 'Now '; font-size:.7rem; font-weight:600; color:var(--fg2); vertical-align:middle; }
-.price-disc { background: var(--red-bg); color: var(--red); border-radius: 4px; padding: 3px 8px; font-size: .8rem; font-weight: 700; align-self:center; }
+.price-was { font-size: .85rem; font-weight: 600; color: var(--fg2); text-decoration: line-through; margin-bottom: 2px; }
+.price-row-main { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.price-bf { font-family: var(--font-cond); font-weight: 900; font-size: 1.5rem; color: var(--accent); line-height: 1; }
+.price-disc { background: var(--accent); color: #fff; border-radius: 6px; padding: 6px 10px; font-size: .82rem; font-weight: 800; text-align: center; white-space: nowrap; line-height: 1.2; }
 .card-actions { display: flex; gap: 8px; padding: 0 16px 14px; flex-wrap: wrap; }
 .btn-web { flex: 1; min-width: 120px; background: var(--accent); color: var(--accent-fg); border: none; border-radius: 6px; padding: 9px 12px; font-family: var(--font); font-weight: 700; font-size: .82rem; cursor: pointer; text-align: center; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 5px; }
 .btn-web:hover { opacity: .9; }
@@ -240,7 +238,7 @@ const WEB_URL = (code) => 'https://www.restock.com.au/Super-Specials/pl.php';
 const products = [
   { id:2, name:"Silver Lined Ambidextrous Gloves (50/pk)", desc:"Premium blue silver lined ambidextrous gloves. Diamond grip both sides.", ctn:"10 packs of 50 per carton", sizes:[{code:"651302B",label:"S"},{code:"651303B",label:"M"},{code:"651304B",label:"L"},{code:"651305B",label:"XL"}], img:"651304B", onWeb:true, webCode:"651304B", rrp:37.97, bf:18.99, disc:50 },
   { id:3, name:"Eco Super Stretch Blue Gloves (200/pk)", desc:"TPE powder-free. Lightweight, ideal for food service.", ctn:"10 packs of 200 per carton", sizes:[{code:"651063",label:"M"},{code:"651064",label:"L"},{code:"651065",label:"XL"}], img:"651064", onWeb:true, webCode:"651064", rrp:7.50, bf:3.75, disc:50 },
-  { id:5, name:"CL25 Carton Liner Blue 630×630×380mm (500/ctn)", desc:"Heavy duty blue carton liner, 25µm.", ctn:"500 liners per carton", sizes:[{code:"461653B",label:"461653B"}], img:null, onWeb:true, webCode:"461653B", rrp:142.95, bf:71.48, disc:50 },
+  { id:5, name:"CL25 Carton Liner Blue 630×630×380mm (500/ctn)", desc:"Heavy duty blue carton liner, 25µm.", ctn:"500 liners per carton", sizes:[{code:"461653B",label:"461653B"}], img:"461653B", onWeb:true, webCode:"461653B", rrp:142.95, bf:71.48, disc:50 },
   { id:6, name:"Premium Blue Nitrile Long Cuff Gloves (100/pk)", desc:"Extra-long cuff for dairy and food processing. Latex-free, textured grip.", ctn:"10 packs of 100 per carton", sizes:[{code:"651152",label:"S"},{code:"651153",label:"M"},{code:"651154",label:"L"}], img:"651154", onWeb:true, webCode:"651154", rrp:16.16, bf:8.93, disc:45 },
   { id:8, name:"PP Coveralls White – Cartons of 50", desc:"Breathable PP, 2-way zip, elasticated hood. HACCP certified.", ctn:"50 per carton", sizes:[{code:"770211",label:"S"},{code:"770212",label:"M"},{code:"770213",label:"L"},{code:"770214",label:"XL"},{code:"770215",label:"2XL"},{code:"770216",label:"3XL"},{code:"770218",label:"5XL"}], img:"770212", onWeb:true, webCode:"770212", rrp:179.00, bf:89.50, disc:50 },
   { id:9, name:"Metal Detectable Corded Earplug Class 5 (100/pk)", desc:"Blue foam earplug with internal metal ball. SLC80 28dB.", ctn:"10 packs of 100 per carton", sizes:[{code:"752910",label:"752910"}], img:"752910", onWeb:true, webCode:"752910", rrp:67.70, bf:33.85, disc:50 },
@@ -278,7 +276,7 @@ function renderGrid(){
       return `<span class="size-chip">${lbl}</span>`;
     }).join('');
     const webBtn = p.webCode ? `<a class="btn-web" href="${WEB_URL(p.webCode)}" target="_blank">🔑 Log in &amp; order</a>` : `<a class="btn-web" href="https://www.restock.com.au/site/pages/login.php" target="_blank">🔑 Log in &amp; order</a>`;
-    return `<div class="card"><div class="card-img">${imgEl}</div><div class="card-body"><div class="card-name">${p.name}</div><div class="card-desc">${p.desc}</div><div class="card-sizes">${chips}</div><div class="card-price"><div class="price-was-now"><span class="price-rrp">RRP ${fmt(p.rrp)}</span><span class="price-bf">${fmt(p.bf)}</span></div>${p.disc>0?`<span class="price-disc">${p.disc}% off</span>`:''}</div></div><div class="card-actions">${webBtn}<button class="btn-email-order" onclick="openDrawerTo(${p.id})">✉ Email order</button></div></div>`;
+    return `<div class="card"><div class="card-img">${imgEl}</div><div class="card-body"><div class="card-name">${p.name}</div><div class="card-desc">${p.desc}</div><div class="card-sizes">${chips}</div><div class="card-price"><div style="margin-bottom:2px"><span class="price-was">Was ${fmt(p.rrp)}</span></div><div class="price-row-main"><span class="price-bf">${fmt(p.bf)}</span>${p.disc>0?`<span class="price-disc">${p.disc}%<br>off</span>`:''}</div></div></div><div class="card-actions">${webBtn}<button class="btn-email-order" onclick="openDrawerTo(${p.id})">✉ Email order</button></div></div>`;
   }).join('');
 }
 
