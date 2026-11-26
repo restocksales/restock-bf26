@@ -228,7 +228,7 @@ if(!famIds){
 
   // Render product grid
   document.getElementById('product-grid').innerHTML=products.map(p=>{
-    const src=p.img?IMG+p.img:null;
+    const src=p.img?IMG+p.img+(p.img.includes('.')?'':'.jpg'):null;
     const imgEl=src?'<img src="'+src+'" alt="'+p.name+'" loading="lazy" onerror="this.parentNode.innerHTML=\'<div class=no-img>'+p.id+'</div>\'">'
       :'<div class="no-img">'+p.id+'</div>';
     const chips=p.sizes.map(s=>{
@@ -249,7 +249,7 @@ if(!famIds){
 
   // Render order drawer rows
   document.getElementById('d-rows').innerHTML=products.map(p=>{
-    const src=p.img?IMG+p.img:null;
+    const src=p.img?IMG+p.img+(p.img.includes('.')?'':'.jpg'):null;
     const thumb=src?'<img src="'+src+'" alt="" loading="lazy" onerror="this.style.display=\'none\'">'
       :'<span style="font-size:.7rem;color:var(--fg3)">'+p.id+'</span>';
     const srows=(p.ctn?'<div class="ctn-note">'+p.ctn+'</div>':'')+p.sizes.map(s=>{
