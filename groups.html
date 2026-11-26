@@ -1,14 +1,14 @@
 <title>Black Friday 2026 — Your Specials | Restock</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;900&family=Barlow+Condensed:wght@700;900&display=swap">
+
 <style>
 :root {
-  --bg:#FFFFFF;--bg2:#F6F5F2;--fg:#1A1A1A;--fg2:#555759;--fg3:#9A9B9D;
+  --bg:#EDEBE7;--bg2:#F3F2EF;--fg:#1A1A1A;--fg2:#555759;--fg3:#9A9B9D;
   --accent:#F18B21;--accent-fg:#FFFFFF;
   --red:#C0392B;--red-bg:#FEF0EE;--green:#1E6B3A;--green-bg:#E3F1E7;
   --border:#E3E1DC;--hero-bg:#1A1A1A;--hero-fg:#FFFFFF;
   --card-bg:#FFFFFF;--shadow:0 1px 4px rgba(0,0,0,.08),0 4px 16px rgba(0,0,0,.06);
-  --radius:10px;--font:'Barlow',Arial,sans-serif;--font-cond:'Barlow Condensed',Arial Narrow,Arial,sans-serif;
+  --radius:10px;--font:'DIN Next LT Pro',Arial,sans-serif;--font-cond:'DIN Next LT Pro',Arial,sans-serif;
 }
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#111111;--bg2:#1C1C1E;--fg:#F0EFED;--fg2:#A8A8AA;--fg3:#666668;--border:#2C2C2E;--card-bg:#1C1C1E;--red-bg:#2C1210;--green-bg:#0D2016;--shadow:0 1px 4px rgba(0,0,0,.3),0 4px 16px rgba(0,0,0,.25);color-scheme:dark}}
 :root[data-theme="dark"]{--bg:#111111;--bg2:#1C1C1E;--fg:#F0EFED;--fg2:#A8A8AA;--fg3:#666668;--border:#2C2C2E;--card-bg:#1C1C1E;--red-bg:#2C1210;--green-bg:#0D2016;--shadow:0 1px 4px rgba(0,0,0,.3),0 4px 16px rgba(0,0,0,.25);color-scheme:dark}
@@ -22,7 +22,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .btn-order-header:hover{opacity:.9}
 .hero{background:var(--hero-bg);padding:36px max(16px,env(safe-area-inset-left,0px)) 32px;text-align:center}
 .hero-eyebrow{font-family:var(--font-cond);font-weight:700;font-size:1rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
-.hero h1{font-family:var(--font-cond);font-weight:900;font-size:clamp(2rem,7vw,3.4rem);color:var(--hero-fg);line-height:1.05;text-wrap:balance;margin-bottom:10px}
+.hero h1{font-family:var(--font-cond);font-weight:900;font-size:clamp(2.5rem,9vw,4.5rem);color:var(--hero-fg);line-height:1.05;text-wrap:balance;margin-bottom:10px}
 .hero h1 em{color:var(--accent);font-style:normal}
 .hero-sub{color:#A8A8AA;font-size:.95rem;margin-bottom:16px}
 .hero-badges{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:16px}
@@ -118,19 +118,16 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 </style>
 
 <header class="site-header">
-  <div class="logo">RE<span>S</span>TOCK</div>
+  <a href="https://www.restock.com.au" target="_blank" style="display:flex;align-items:center;text-decoration:none;"><img src="https://cdn.klaviyomail.com/company/RTXMLp/images/images_restock-logo36a30.png" alt="RESTOCK" style="height:36px;width:auto;"></a>
   <button class="btn-order-header" onclick="openDrawer()">&#x1F4CB; Email Order</button>
 </header>
 
 <section class="hero">
-  <div class="hero-eyebrow" id="hero-eyebrow">Black Friday 2026 &middot; Your Specials</div>
-  <h1>Up to <em>Half Price</em><br>PPE &amp; Consumables</h1>
+  <div class="hero-eyebrow">Black Friday 2026 Specials</div>
+  <h1>Up to <em>Half Price</em></h1>
   <p class="hero-sub">Ends Friday 4 December 2026 &middot; While stocks last &middot; All prices ex GST</p>
-  <div class="hero-badges">
-    <span class="badge" id="badge-count">Loading...</span>
-    <span class="badge">Up to 50% off</span>
-  </div>
-  <p class="hero-big-disc">UP TO 50% OFF</p>
+  
+  
 </section>
 
 <div class="notice-banner">
@@ -220,8 +217,8 @@ if(!famIds){
 } else {
   const products=famIds.map(id=>({id,...MASTER[id]})).filter(p=>p.name);
   document.getElementById('badge-count').textContent=products.length+' products';
-  document.getElementById('hero-eyebrow').textContent='Black Friday 2026 · Group '+grpRaw+' Specials';
-  document.getElementById('sec-title').textContent='Your Black Friday Specials — Group '+grpRaw;
+  document.getElementById('hero-eyebrow').textContent='Black Friday 2026 Specials';
+  document.getElementById('sec-title').textContent='Your Black Friday Specials';
 
   // Render product grid
   document.getElementById('product-grid').innerHTML=products.map(p=>{
@@ -341,8 +338,8 @@ function generateOrder(){
   const gst=(sub+freight)*0.1;
   const tot=sub+freight+gst;
   const freightLine=freight>0?'  Freight (ex GST):  $25.00':null;
-  const body=['BLACK FRIDAY ORDER - Your Specials (Group '+grpRaw+')','Offer ends '+ENDS,'','FROM:','  Name: '+name,'  Company: '+co,po?'  PO Number: '+po:null,'  Phone: '+ph,'  Email: '+em,notes?'  Notes: '+notes:null,'','ORDER:',...lines,'','  Subtotal (ex GST):  '+fmt(sub),freightLine,'  GST (10%):          '+fmt(gst),'  TOTAL (inc GST):    '+fmt(tot),'',freeFreight?'Freight: FREE (order over $200 ex GST)':'Freight: $25.00 ex GST','Outside metro areas: freight to be confirmed before dispatch.','','All prices AUD ex GST. Subject to stock availability.'].filter(l=>l!==null).join('\n');
-  const subj='Black Friday Order - '+(co||name)+' (Group '+grpRaw+')';
+  const body=['BLACK FRIDAY ORDER - Your Specials','Offer ends '+ENDS,'','FROM:','  Name: '+name,'  Company: '+co,po?'  PO Number: '+po:null,'  Phone: '+ph,'  Email: '+em,notes?'  Notes: '+notes:null,'','ORDER:',...lines,'','  Subtotal (ex GST):  '+fmt(sub),freightLine,'  GST (10%):          '+fmt(gst),'  TOTAL (inc GST):    '+fmt(tot),'',freeFreight?'Freight: FREE (order over $200 ex GST)':'Freight: $25.00 ex GST','Outside metro areas: freight to be confirmed before dispatch.','','All prices AUD ex GST. Subject to stock availability.'].filter(l=>l!==null).join('\n');
+  const subj='Black Friday Order - '+(co||name);
   const mailtoUrl='mailto:'+EMAIL+'?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(body);
   const fullText='TO: '+EMAIL+'\nSUBJECT: '+subj+'\n\n'+body;
   const a=document.createElement('a');a.href=mailtoUrl;a.style.display='none';document.body.appendChild(a);a.click();document.body.removeChild(a);

@@ -1,16 +1,15 @@
 <!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <title>Black Friday Food & Pharma Processing</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;900&family=Barlow+Condensed:wght@700;900&display=swap">
 <style>
 :root {
-  --bg: #FFFFFF; --bg2: #F6F5F2; --fg: #1A1A1A; --fg2: #555759; --fg3: #9A9B9D;
+  --bg: #EDEBE7; --bg2: #F3F2EF; --fg: #1A1A1A; --fg2: #555759; --fg3: #9A9B9D;
   --accent: #F18B21; --accent-fg: #FFFFFF;
   --red: #C0392B; --red-bg: #FEF0EE;
   --green: #1E6B3A; --green-bg: #E3F1E7;
   --border: #E3E1DC; --hero-bg: #1A1A1A; --hero-fg: #FFFFFF;
   --card-bg: #FFFFFF; --shadow: 0 1px 4px rgba(0,0,0,.08), 0 4px 16px rgba(0,0,0,.06);
-  --radius: 10px; --font: 'Barlow', Arial, sans-serif; --font-cond: 'Barlow Condensed', Arial Narrow, Arial, sans-serif;
+  --radius: 10px; --font: 'DIN Next LT Pro', Arial, sans-serif; --font-cond: 'DIN Next LT Pro', Arial, sans-serif;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
@@ -32,13 +31,12 @@
 body { font-family: var(--font); background: var(--bg); color: var(--fg); font-size: 15px; line-height: 1.5; padding-left: max(0px, env(safe-area-inset-left, 0px)); padding-right: max(0px, env(safe-area-inset-right, 0px)); }
 .site-header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 100; background: var(--hero-bg); border-bottom: 3px solid var(--accent); padding: 10px max(16px, env(safe-area-inset-left, 0px)); display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 101; background: var(--hero-bg); }
-.site-header .logo { font-family: var(--font-cond); font-weight: 900; font-size: 1.3rem; color: var(--hero-fg); letter-spacing: .04em; text-transform: uppercase; }
-.site-header .logo span { color: var(--accent); }
+.site-header .logo-img { height: 36px; width: auto; }
 .btn-order-header { background: var(--accent); color: var(--accent-fg); border: none; border-radius: 6px; padding: 8px 16px; font-family: var(--font); font-weight: 700; font-size: .85rem; cursor: pointer; white-space: nowrap; }
 .btn-order-header:hover { opacity: .9; }
 .hero { background: var(--hero-bg); padding: 36px max(16px, env(safe-area-inset-left, 0px)) 32px; text-align: center; }
 .hero-eyebrow { font-family: var(--font-cond); font-weight: 700; font-size: 1rem; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
-.hero h1 { font-family: var(--font-cond); font-weight: 900; font-size: clamp(2rem, 7vw, 3.4rem); color: var(--hero-fg); line-height: 1.05; text-wrap: balance; margin-bottom: 10px; }
+.hero h1 { font-family: var(--font-cond); font-weight: 900; font-size: clamp(2.5rem, 9vw, 4.5rem); color: var(--hero-fg); line-height: 1.05; text-wrap: balance; margin-bottom: 10px; }
 .hero h1 em { color: var(--accent); font-style: normal; }
 .hero-sub { color: #A8A8AA; font-size: .95rem; margin-bottom: 16px; }
 .hero-badges { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 16px; }
@@ -125,18 +123,18 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 </style>
 
 <header class="site-header">
-  <div class="logo">RE<span>S</span>TOCK</div>
+  <a href="https://www.restock.com.au" target="_blank" style="display:flex;align-items:center;text-decoration:none;">
+    <img src="https://cdn.klaviyomail.com/company/RTXMLp/images/images_restock-logo36a30.png" alt="RESTOCK" style="height:36px;width:auto;">
+  </a>
   <button class="btn-order-header" onclick="openDrawer()">📋 Email Order</button>
 </header>
 
 <section class="hero">
-  <div class="hero-eyebrow">Black Friday Specials 2026 &ndash; Food &amp; Pharma Indirect Consumables</div>
-  <h1>Up to <em>Half Price</em><br>PPE &amp; Consumables</h1>
+  <div class="hero-eyebrow">Black Friday 2026 Specials</div>
+  <h1>Up to <em>Half Price</em></h1>
   <p class="hero-sub">Ends Friday 4 December 2026 · While stocks last · All prices ex GST</p>
-  <div class="hero-badges">
-    <span class="badge">26 product groups</span>
-  </div>
-  <p class="hero-big-disc">UP TO 50% OFF</p>
+  
+  
 </section>
 
 <div class="notice-banner">
@@ -246,19 +244,19 @@ const products = [
   { id:6, name:"Premium Blue Nitrile Long Cuff Gloves (100/pk)", desc:"Extra-long cuff for dairy and food processing. Latex-free, textured grip.", ctn:"10 packs of 100 per carton", sizes:[{code:"651152",label:"S"},{code:"651153",label:"M"},{code:"651154",label:"L"}], img:"651154", onWeb:true, webCode:"651154", rrp:16.16, bf:8.93, disc:45 },
   { id:8, name:"PP Coveralls White – Cartons of 50", desc:"Breathable PP, 2-way zip, elasticated hood. HACCP certified.", ctn:"50 per carton", sizes:[{code:"770211",label:"S"},{code:"770212",label:"M"},{code:"770213",label:"L"},{code:"770214",label:"XL"},{code:"770215",label:"2XL"},{code:"770216",label:"3XL"},{code:"770218",label:"5XL"}], img:"770212", onWeb:true, webCode:"770212", rrp:179.00, bf:89.50, disc:50 },
   { id:9, name:"Metal Detectable Corded Earplug Class 5 (100/pk)", desc:"Blue foam earplug with internal metal ball. SLC80 28dB.", ctn:"10 packs of 100 per carton", sizes:[{code:"752910",label:"752910"}], img:"752910", onWeb:true, webCode:"752910", rrp:67.70, bf:33.85, disc:50 },
-  { id:10, name:"Blue Slimline Hand Towel 200 sheets 23×23cm (20 pks/ctn)", desc:"Premium blue multifold towel. Ideal for food prep and processing.", ctn:"20 packs per carton", sizes:[{code:"517120",label:"517120"}], img:"517120", onWeb:true, webCode:"517120", rrp:93.68, bf:50.96, disc:46 },
+  { id:10, name:"Blue Slimline Hand Towel 200 sheets 23×23cm (20 pks/ctn)", desc:"Premium blue multifold towel. Ideal for food prep and processing.", ctn:"20 packs per carton", uom:"cartons", sizes:[{code:"517120",label:"517120"}], img:"517120", onWeb:true, webCode:"517120", rrp:93.68, bf:50.96, disc:46 },
   { id:11, name:"PP Lab Coat No Pocket White – Standard (100/ctn)", desc:"HACCP certified PP lab coat. Elastic cuff, velcro closure.", ctn:"100 per carton", sizes:[{code:"653105",label:"M"},{code:"653106",label:"2XL"},{code:"653107",label:"3XL"},{code:"653110",label:"5XL"}], img:"653106", onWeb:true, webCode:"653106", rrp:133.98, bf:66.99, disc:50 },
   { id:12, name:"Manual Autocut White Dispenser (each)", desc:"Sheet-by-sheet, hygienic dispensing. FREE with every 10 cartons of Blue Roll Towel.", ctn:"Sold individually", sizes:[{code:"407200",label:"407200"}], img:"407200", onWeb:true, webCode:"407200", rrp:146.15, bf:75.43, disc:48 },
   { id:13, name:"PE Hanging Aprons 1550mm Blue (500/ctn)", desc:"Liquid-proof disposable apron. HACCP certified.", ctn:"500 aprons per carton", sizes:[{code:"653044",label:"653044"}], img:"653044", onWeb:true, webCode:"653044", rrp:79.00, bf:46.89, disc:41 },
   { id:14, name:"Polymer Coated Latex PF Gloves (100/pk)", desc:"Fully textured, superior puncture resistance. Latex powder-free.", ctn:"10 packs of 100 per carton", sizes:[{code:"651533",label:"M"},{code:"651535",label:"L"}], img:"651533", onWeb:true, webCode:"651533", rrp:9.69, bf:5.28, disc:46 },
-  { id:15, name:"CE Type 4/5/6 Coveralls White (each)", desc:"Microporous, breathable, anti-static. EN certified Type 4, 5 & 6.", ctn:"50 per carton", sizes:[{code:"770202",label:"M"},{code:"770203",label:"L"},{code:"770204",label:"XL"},{code:"770205",label:"2XL"},{code:"770206",label:"3XL"}], img:"770204", onWeb:true, webCode:"770204", rrp:10.83, bf:5.42, disc:50 },
-  { id:16, name:"Machine Tape Clear Hot Melt Alt. 48mm×1000m (6 rolls/ctn)", desc:"Premium rubber adhesive. Excellent tensile strength for single-strip carton sealing.", ctn:"6 rolls per carton", sizes:[{code:"753532",label:"753532"}], img:"753532", onWeb:true, webCode:"753532", rrp:189.65, bf:96.36, disc:49 },
+  { id:15, name:"CE Type 4/5/6 Coveralls White (each)", desc:"Microporous, breathable, anti-static. EN certified Type 4, 5 & 6.", ctn:"50 per carton", uom:"each", sizes:[{code:"770202",label:"M"},{code:"770203",label:"L"},{code:"770204",label:"XL"},{code:"770205",label:"2XL"},{code:"770206",label:"3XL"}], img:"770204", onWeb:true, webCode:"770204", rrp:10.83, bf:5.42, disc:50 },
+  { id:16, name:"Machine Tape Clear Hot Melt Alt. 48mm×1000m (6 rolls/ctn)", desc:"Premium rubber adhesive. Excellent tensile strength for single-strip carton sealing.", ctn:"6 rolls per carton", uom:"cartons", sizes:[{code:"753532",label:"753532"}], img:"753532", onWeb:true, webCode:"753532", rrp:189.65, bf:96.36, disc:49 },
   { id:17, name:"PP Lab Coat No Pocket Green – Standard (100/ctn)", desc:"HACCP certified green PP lab coat.", ctn:"100 per carton", sizes:[{code:"653133",label:"M"},{code:"653134",label:"L"},{code:"653137",label:"3XL"}], img:"653133", onWeb:true, webCode:"653134", rrp:222.74, bf:111.37, disc:50 },
   { id:19, name:"Eco Machine Stretch Film 500mm×2174m (each)", desc:"Cost-effective machine stretch for friction brake wrapping. Low noise.", ctn:"1 roll per carton", sizes:[{code:"753528",label:"753528"}], img:"753528", onWeb:true, webCode:"753528", rrp:124.34, bf:62.17, disc:50 },
-  { id:20, name:"Type 5&6 SMS White Coverall with Hood (each)", desc:"Triple-layer SMS, water resistant, anti-static. HACCP certified.", ctn:"50 per carton", sizes:[{code:"770241",label:"XL"},{code:"770242",label:"2XL"},{code:"770245",label:"2XL (disc)"}], img:"770245", onWeb:true, webCode:"770245", rrp:9.55, bf:5.01, disc:48 },
-  { id:26, name:"FSC Autocut Blue Roll Towel 1ply 300m (6 rolls/ctn)", desc:"FSC certified, single-sheet dispensing reduces waste. FREE dispenser with 10 ctns.", ctn:"6 rolls per carton", sizes:[{code:"428300",label:"428300"}], img:"428300", onWeb:true, webCode:"428300", rrp:108.22, bf:56.84, disc:47 },
+  { id:20, name:"Type 5&6 SMS White Coverall with Hood (each)", desc:"Triple-layer SMS, water resistant, anti-static. HACCP certified.", ctn:"50 per carton", uom:"each", sizes:[{code:"770241",label:"XL"},{code:"770242",label:"2XL"},{code:"770245",label:"2XL (disc)"}], img:"770245", onWeb:true, webCode:"770245", rrp:9.55, bf:5.01, disc:48 },
+  { id:26, name:"FSC Autocut Blue Roll Towel 1ply 300m (6 rolls/ctn)", desc:"FSC certified, single-sheet dispensing reduces waste. FREE dispenser with 10 ctns.", ctn:"6 rolls per carton", uom:"cartons", sizes:[{code:"428300",label:"428300"}], img:"428300", onWeb:true, webCode:"428300", rrp:108.22, bf:56.84, disc:47 },
   { id:28, name:"Silver Lined Ambidextrous Gloves – S & 2XL (50/pk)", desc:"Premium blue silver lined ambidextrous gloves. Small and 2XL sizes.", ctn:"10 packs of 50 per carton", sizes:[{code:"651302A",label:"S"},{code:"651306A",label:"2XL"}], img:"651302A", onWeb:true, webCode:"651302A", rrp:31.24, bf:15.82, disc:49 },
-  { id:29, name:"PP Coverall White Singles (each)", desc:"Individual polypropylene coveralls.", ctn:"50 per carton", sizes:[{code:"770213A",label:"L"},{code:"770214A",label:"XL"},{code:"770215A",label:"2XL"},{code:"770216A",label:"3XL"}], img:"770213", onWeb:true, webCode:"770213A", rrp:7.53, bf:3.77, disc:50 },
+  { id:29, name:"PP Coverall White Singles (each)", desc:"Individual polypropylene coveralls.", ctn:"50 per carton", uom:"each", sizes:[{code:"770213A",label:"L"},{code:"770214A",label:"XL"},{code:"770215A",label:"2XL"},{code:"770216A",label:"3XL"}], img:"770213", onWeb:true, webCode:"770213A", rrp:7.53, bf:3.77, disc:50 },
   { id:30, name:"PP Lab Coat No Pocket Green – Clearance (100/ctn)", desc:"HACCP certified green lab coat clearance stock. M–7XL.", ctn:"100 per carton", sizes:[{code:"653133A",label:"M"},{code:"653134A",label:"L"},{code:"653135A",label:"XL"},{code:"653136A",label:"2XL"},{code:"653137A",label:"3XL"},{code:"653138A",label:"5XL"},{code:"653139A",label:"7XL"}], img:"653133", onWeb:true, webCode:"653133A", rrp:222.74, bf:111.38, disc:50 },
   { id:31, name:"PP Lab Coat No Pocket White – Clearance (100/ctn)", desc:"White lab coat clearance stock. L / XL / 3XL / 5XL.", ctn:"100 per carton", sizes:[{code:"653104A",label:"L"},{code:"653104F",label:"L (F)"},{code:"653105F",label:"XL"},{code:"653107C",label:"3XL"},{code:"653108A",label:"5XL"}], img:"653106", onWeb:true, webCode:"653104A", rrp:131.09, bf:86.89, disc:34 },
   { id:21, name:"Green PU Gumboot Non Safety Toe (1 pair)", desc:"Ultra-light, lasts 3–4× longer than PVC/rubber. Anti-bacterial, anti-static, washable.", ctn:"Sold individually", sizes:[{code:"758745",label:"39/6"},{code:"758746",label:"40/6.5"},{code:"758747",label:"41/7"},{code:"758748",label:"42/8"},{code:"758749",label:"43/9"},{code:"758750",label:"44/10"},{code:"758751",label:"45/10.5"},{code:"758752",label:"46/11"}], img:"758745", onWeb:true, webCode:"758745", rrp:82.00, bf:44.00, disc:46 },
@@ -284,7 +282,8 @@ function renderGrid(){
   }).join('');
 }
 
-function uomLabel(ctn){
+function uomLabel(ctn,uom){
+  if(uom) return uom;
   if(!ctn) return '';
   const c = ctn.toLowerCase();
   if(c.includes('pack')) return 'packs';
@@ -296,7 +295,7 @@ function uomLabel(ctn){
 
 function sizeRowsHtml(p){
   const ctnNote = p.ctn ? `<div style="font-size:.73rem;color:var(--fg3);margin-bottom:6px">${p.ctn}</div>` : '';
-  const uom = uomLabel(p.ctn);
+  const uom = uomLabel(p.ctn, p.uom);
   const uomTag = uom ? `<span style="font-size:.72rem;color:var(--fg3);min-width:30px">${uom}</span>` : '';
   if(p.sizes.length===1){
     const s=p.sizes[0];
@@ -394,14 +393,32 @@ function validateFields(){
   return true;
 }
 
+function expandSize(label){
+  const map={'S':'Small','M':'Medium','L':'Large','XL':'X Large','2XL':'2X Large','3XL':'3X Large','4XL':'4X Large','5XL':'5X Large','6XL':'6X Large','7XL':'7X Large'};
+  return map[label] || label;
+}
+
 function generateOrder(){
   if(!validateFields()) return;
   const name=document.getElementById('cust-name').value.trim(), company=document.getElementById('cust-company').value.trim(), po=document.getElementById('cust-po').value.trim(), phone=document.getElementById('cust-phone').value.trim(), email=document.getElementById('cust-email').value.trim(), notes=document.getElementById('cust-notes').value.trim();
   const lines=[]; let subtotal=0;
-  products.forEach(p=>{ const sl=p.sizes.map(s=>{ const qty=parseInt(document.getElementById('sq-'+p.id+'-'+s.code)?.value)||0; if(qty>0){subtotal+=qty*p.bf; return`    ${p.sizes.length>1?s.label+' ('+s.code+')':s.code}: Qty ${qty}`;} return null;}).filter(Boolean); if(sl.length){lines.push(`  • ${p.name}  |  BF Price: ${fmt(p.bf)} ea`); sl.forEach(l=>lines.push(l));} });
+  products.forEach(p=>{
+    p.sizes.forEach(s=>{
+      const qty=parseInt(document.getElementById('sq-'+p.id+'-'+s.code)?.value)||0;
+      if(qty>0){
+        subtotal+=qty*p.bf;
+        const sizeStr = p.sizes.length>1 ? ` - ${expandSize(s.label)}` : '';
+        lines.push(`${qty} x ${s.code}${sizeStr} - ${p.name} - ${fmt(p.bf)} ea`);
+      }
+    });
+  });
   if(!lines.length){alert('Please enter a quantity for at least one item.');return;}
-  const gst=subtotal*0.1, total=subtotal+gst;
-  const body=['BLACK FRIDAY ORDER – Food & Pharmaceutical Indirect Consumables',`Offer ends ${OFFER_ENDS}`,``,`FROM:`,`  Name: ${name}`,`  Company: ${company}`,po?`  PO Number: ${po}`:null,`  Phone: ${phone}`,`  Email: ${email}`,notes?`  Notes: ${notes}`:null,``,`ORDER:`,...lines,``,`  Subtotal (ex GST):  ${fmt(subtotal)}`,`  GST (10%):          ${fmt(gst)}`,`  TOTAL (inc GST):    ${fmt(total)}`,``,`All prices ex GST. Subject to confirmation of stock availability.`].filter(l=>l!==null).join('\n');
+  const freeFreight=subtotal>=200;
+  const freight=freeFreight?0:25;
+  const gst=(subtotal+freight)*0.1;
+  const total=subtotal+freight+gst;
+  const freightLine=freight>0?`  Freight (ex GST):  $25.00`:null;
+  const body=['BLACK FRIDAY ORDER – Food & Pharmaceutical Indirect Consumables',`Offer ends ${OFFER_ENDS}`,``,`FROM:`,`  Name: ${name}`,`  Company: ${company}`,po?`  PO Number: ${po}`:null,`  Phone: ${phone}`,`  Email: ${email}`,notes?`  Notes: ${notes}`:null,``,`ORDER:`,...lines,``,`  Subtotal (ex GST):  ${fmt(subtotal)}`,freightLine,`  GST (10%):          ${fmt(gst)}`,`  TOTAL (inc GST):    ${fmt(total)}`,``,freeFreight?`Freight: FREE (order over $200 ex GST)`:`Freight: $25.00 ex GST - add ${fmt(200-subtotal)} more (ex GST) to qualify for free freight.`,`Outside metro areas: freight to be confirmed before dispatch.`,``,`All prices ex GST. Subject to confirmation of stock availability.`].filter(l=>l!==null).join('\n');
   const subject=`Black Friday Order – ${company||name}`;
   const mailtoUrl=`mailto:${ORDERS_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   const fullText=`TO: ${ORDERS_EMAIL}\nSUBJECT: ${subject}\n\n${body}`;
