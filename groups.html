@@ -1,0 +1,355 @@
+<title>Black Friday 2026 — Your Specials | Restock</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;900&family=Barlow+Condensed:wght@700;900&display=swap">
+<style>
+:root {
+  --bg:#FFFFFF;--bg2:#F6F5F2;--fg:#1A1A1A;--fg2:#555759;--fg3:#9A9B9D;
+  --accent:#F18B21;--accent-fg:#FFFFFF;
+  --red:#C0392B;--red-bg:#FEF0EE;--green:#1E6B3A;--green-bg:#E3F1E7;
+  --border:#E3E1DC;--hero-bg:#1A1A1A;--hero-fg:#FFFFFF;
+  --card-bg:#FFFFFF;--shadow:0 1px 4px rgba(0,0,0,.08),0 4px 16px rgba(0,0,0,.06);
+  --radius:10px;--font:'Barlow',Arial,sans-serif;--font-cond:'Barlow Condensed',Arial Narrow,Arial,sans-serif;
+}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#111111;--bg2:#1C1C1E;--fg:#F0EFED;--fg2:#A8A8AA;--fg3:#666668;--border:#2C2C2E;--card-bg:#1C1C1E;--red-bg:#2C1210;--green-bg:#0D2016;--shadow:0 1px 4px rgba(0,0,0,.3),0 4px 16px rgba(0,0,0,.25);color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#111111;--bg2:#1C1C1E;--fg:#F0EFED;--fg2:#A8A8AA;--fg3:#666668;--border:#2C2C2E;--card-bg:#1C1C1E;--red-bg:#2C1210;--green-bg:#0D2016;--shadow:0 1px 4px rgba(0,0,0,.3),0 4px 16px rgba(0,0,0,.25);color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;margin:0}
+body{font-family:var(--font);background:var(--bg);color:var(--fg);font-size:15px;line-height:1.5;padding-left:max(0px,env(safe-area-inset-left,0px));padding-right:max(0px,env(safe-area-inset-right,0px))}
+.site-header{position:sticky;top:env(safe-area-inset-top,0px);z-index:100;background:var(--hero-bg);border-bottom:3px solid var(--accent);padding:10px max(16px,env(safe-area-inset-left,0px));display:flex;align-items:center;justify-content:space-between;gap:12px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:101;background:var(--hero-bg)}
+.site-header .logo{font-family:var(--font-cond);font-weight:900;font-size:1.3rem;color:var(--hero-fg);letter-spacing:.04em;text-transform:uppercase}
+.site-header .logo span{color:var(--accent)}
+.btn-order-header{background:var(--accent);color:var(--accent-fg);border:none;border-radius:6px;padding:8px 16px;font-family:var(--font);font-weight:700;font-size:.85rem;cursor:pointer;white-space:nowrap}
+.btn-order-header:hover{opacity:.9}
+.hero{background:var(--hero-bg);padding:36px max(16px,env(safe-area-inset-left,0px)) 32px;text-align:center}
+.hero-eyebrow{font-family:var(--font-cond);font-weight:700;font-size:1rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+.hero h1{font-family:var(--font-cond);font-weight:900;font-size:clamp(2rem,7vw,3.4rem);color:var(--hero-fg);line-height:1.05;text-wrap:balance;margin-bottom:10px}
+.hero h1 em{color:var(--accent);font-style:normal}
+.hero-sub{color:#A8A8AA;font-size:.95rem;margin-bottom:16px}
+.hero-badges{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:16px}
+.badge{background:rgba(241,139,33,.15);color:var(--accent);border:1px solid rgba(241,139,33,.3);border-radius:20px;padding:4px 14px;font-size:.8rem;font-weight:600}
+.hero-big-disc{font-family:var(--font-cond);font-weight:900;font-size:clamp(2.2rem,9vw,4.5rem);color:var(--accent);letter-spacing:.02em;line-height:1;margin-bottom:0}
+.notice-banner{background:#fff;padding:28px max(20px,env(safe-area-inset-left,0px));border-bottom:1px solid var(--border)}
+.notice-banner-inner{display:flex;gap:20px;max-width:820px;margin:0 auto;flex-wrap:wrap;align-items:flex-start}
+.notice-col{flex:1;min-width:220px;display:flex;flex-direction:column;gap:8px}
+.notice-col-label{font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--fg)}
+.notice-btn{display:flex;flex-direction:column;gap:6px;border-radius:12px;padding:20px 22px;text-decoration:none;cursor:pointer;font-family:var(--font);text-align:left;border:none;transition:transform .15s;box-shadow:0 4px 18px rgba(0,0,0,.15)}
+.notice-btn:hover{transform:translateY(-2px)}
+.notice-btn.login{background:var(--accent);color:#fff}
+.notice-btn.email{background:#1A1A1A;color:#fff}
+.notice-btn-title{font-size:1rem;font-weight:800;line-height:1.3}
+.notice-btn-cta{font-size:.82rem;font-weight:700;margin-top:6px;opacity:.9}
+.section-wrap{max-width:1200px;margin:0 auto;padding:28px max(16px,env(safe-area-inset-left,0px))}
+.section-title{font-family:var(--font-cond);font-weight:700;font-size:1.1rem;color:var(--fg2);letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px;padding-bottom:10px;border-bottom:2px solid var(--border);display:flex;align-items:center;gap:10px}
+.section-title::before{content:"";display:block;width:4px;height:18px;background:var(--accent);border-radius:2px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+.card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column}
+.card-img{aspect-ratio:4/3;overflow:hidden;background:var(--bg2);display:flex;align-items:center;justify-content:center}
+.card-img img{width:100%;height:100%;object-fit:contain;padding:10px;transition:transform .2s ease}
+.card:hover .card-img img{transform:scale(1.04)}
+.card-img .no-img{font-size:1.5rem;color:var(--fg3);font-family:var(--font-cond);font-weight:700}
+.card-body{padding:12px 14px 14px;flex:1;display:flex;flex-direction:column;gap:6px}
+.card-name{font-weight:700;font-size:.9rem;line-height:1.3;color:var(--fg)}
+.card-desc{font-size:.78rem;color:var(--fg2);line-height:1.4}
+.chips{display:flex;flex-wrap:wrap;gap:3px;margin-top:2px}
+.chip{background:var(--bg2);border:1px solid var(--border);border-radius:4px;padding:1px 6px;font-size:.72rem;font-weight:600;color:var(--fg2)}
+.card-price{display:flex;align-items:center;gap:8px;margin-top:auto;padding-top:8px;flex-wrap:wrap}
+.price-was-now{display:flex;flex-direction:column;gap:1px}
+.price-rrp{font-size:.78rem;color:var(--fg3);text-decoration:line-through}
+.price-rrp::before{content:'Was ';font-weight:400}
+.price-bf{font-family:var(--font-cond);font-weight:900;font-size:1.4rem;color:var(--accent);line-height:1}
+.price-bf::before{content:'Now ';font-size:.68rem;font-weight:600;color:var(--fg2);vertical-align:middle}
+.price-disc{background:var(--red-bg);color:var(--red);border-radius:4px;padding:2px 6px;font-size:.74rem;font-weight:700;align-self:center}
+.card-actions{display:flex;gap:6px;padding:0 14px 12px;flex-wrap:wrap}
+.btn-web{flex:1;min-width:100px;background:var(--accent);color:var(--accent-fg);border:none;border-radius:6px;padding:8px 10px;font-family:var(--font);font-weight:700;font-size:.78rem;cursor:pointer;text-align:center;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:4px}
+.btn-web:hover{opacity:.9}
+.btn-email-order{flex:1;min-width:100px;background:var(--bg2);color:var(--fg);border:1.5px solid var(--border);border-radius:6px;padding:8px 10px;font-family:var(--font);font-weight:600;font-size:.78rem;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:4px}
+.btn-email-order:hover{background:var(--border)}
+.footer{background:var(--hero-bg);color:#A8A8AA;text-align:center;font-size:.82rem;padding:24px max(16px,env(safe-area-inset-left,0px));border-top:3px solid var(--accent)}
+.footer a{color:var(--accent);text-decoration:none}
+.srow{display:flex;align-items:center;gap:7px;padding:3px 0}
+.slabel{font-size:.78rem;color:var(--fg2);min-width:76px;display:flex;flex-direction:column;gap:1px}
+.slabel .scode{font-size:.66rem;color:var(--fg3);font-weight:400}
+.sqbtn{width:22px;height:22px;border-radius:50%;background:var(--bg2);border:1px solid var(--border);cursor:pointer;font-size:.9rem;color:var(--fg);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.sqinp{width:38px;text-align:center;border:1px solid var(--border);border-radius:5px;padding:2px 3px;font-size:.82rem;background:var(--bg);color:var(--fg)}
+.prow{padding:10px 0;border-bottom:1px solid var(--border);border-radius:8px;transition:background .3s,box-shadow .3s}
+.prow:last-child{border-bottom:none}
+.prow.highlighted{background:rgba(241,139,33,.12);box-shadow:inset 3px 0 0 var(--accent);padding-left:10px}
+.prow.highlighted-soft{background:rgba(241,139,33,.05);box-shadow:inset 3px 0 0 rgba(241,139,33,.4);padding-left:10px}
+.prow-hdr{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.pthumb{width:52px;height:52px;border-radius:8px;overflow:hidden;background:var(--bg2);flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.pthumb img{width:100%;height:100%;object-fit:contain;padding:4px}
+.drawer-overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:200;display:none;align-items:flex-end}
+.drawer-overlay.open{display:flex}
+.drawer{background:var(--bg);width:100%;max-width:560px;margin:0 auto;border-radius:16px 16px 0 0;max-height:88vh;overflow-y:auto;padding:0 0 max(20px,env(safe-area-inset-bottom,20px))}
+.drawer-handle{display:flex;align-items:center;justify-content:space-between;padding:14px 20px 12px;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--bg);z-index:1}
+.drawer-title{font-family:var(--font-cond);font-weight:900;font-size:1.1rem;color:var(--fg)}
+.btn-close{background:var(--bg2);border:none;border-radius:50%;width:30px;height:30px;cursor:pointer;font-size:1rem;color:var(--fg);display:flex;align-items:center;justify-content:center}
+.drawer-intro{padding:12px 20px 8px;font-size:.85rem;color:var(--fg2)}
+.drawer-intro strong{color:var(--fg)}
+.d-rows{padding:0 20px}
+.ctn-note{font-size:.72rem;color:var(--fg3);margin-bottom:5px}
+.pname{font-size:.85rem;font-weight:700;line-height:1.25;color:var(--fg)}
+.pprice{font-size:.78rem;font-weight:700;color:var(--fg2);margin-top:2px}
+.sea{font-size:.72rem;color:var(--fg3);margin-left:3px}
+.totals-box{display:none;margin:4px 20px 0;background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:11px 14px}
+.trow{display:flex;justify-content:space-between;font-size:.82rem;color:var(--fg2);margin-bottom:3px}
+.trow.ttotal{font-size:.95rem;font-weight:700;color:var(--fg);border-top:1px solid var(--border);padding-top:7px;margin-top:3px}
+.d-form{padding:12px 20px 0}
+.d-form h4{font-weight:700;font-size:.85rem;color:var(--fg);margin-bottom:8px}
+.frow{display:flex;flex-direction:column;gap:3px;margin-bottom:9px}
+.frow label{font-size:.75rem;font-weight:600;color:var(--fg2)}
+.frow input,.frow textarea{border:1px solid var(--border);border-radius:6px;padding:7px 10px;font-size:.85rem;background:var(--bg);color:var(--fg);font-family:var(--font);width:100%}
+.frow input:focus,.frow textarea:focus{outline:2px solid var(--accent);outline-offset:1px}
+.d-send{padding:12px 20px 0}
+.btn-gen{width:100%;background:var(--accent);color:var(--accent-fg);border:none;border-radius:8px;padding:12px;font-family:var(--font);font-weight:700;font-size:.95rem;cursor:pointer}
+.btn-gen:hover{opacity:.9}
+.send-note{font-size:.75rem;color:var(--fg3);text-align:center;margin-top:7px;padding:0 20px}
+.email-generated{background:var(--green-bg);border:1px solid var(--green);border-radius:8px;padding:11px 14px;margin:10px 20px 0;font-size:.82rem;color:var(--green);display:none}
+.email-generated.show{display:block}
+.email-pre{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:11px 14px;margin:8px 20px 0;font-size:.75rem;color:var(--fg);white-space:pre-wrap;word-break:break-word;max-height:180px;overflow-y:auto;display:none}
+.email-pre.show{display:block}
+.btn-copy{background:var(--accent);color:var(--accent-fg);border:none;border-radius:6px;padding:7px 18px;font-weight:700;font-size:.82rem;cursor:pointer;display:none;margin:7px 20px 0}
+.btn-copy.show{display:block}
+.err-box{background:var(--red-bg);border:1px solid var(--red);border-radius:8px;padding:14px 20px;margin:20px;font-size:.88rem;color:var(--red);text-align:center}
+.field-err{display:none;background:#FEF0EE;border:1px solid #C0392B;border-radius:6px;padding:8px 12px;font-size:.8rem;color:#C0392B;margin-bottom:8px}
+.freight-row{display:none;justify-content:space-between;font-size:.82rem;color:#8B5000;margin-bottom:3px}
+.freight-notice{border-radius:6px;padding:9px 12px;font-size:.8rem;font-weight:600;margin-top:8px;display:none}
+@media(min-width:560px){.drawer{border-radius:16px;margin:auto;align-self:center}.drawer-overlay{align-items:center}}
+</style>
+
+<header class="site-header">
+  <div class="logo">RE<span>S</span>TOCK</div>
+  <button class="btn-order-header" onclick="openDrawer()">&#x1F4CB; Email Order</button>
+</header>
+
+<section class="hero">
+  <div class="hero-eyebrow" id="hero-eyebrow">Black Friday 2026 &middot; Your Specials</div>
+  <h1>Up to <em>Half Price</em><br>PPE &amp; Consumables</h1>
+  <p class="hero-sub">Ends Friday 4 December 2026 &middot; While stocks last &middot; All prices ex GST</p>
+  <div class="hero-badges">
+    <span class="badge" id="badge-count">Loading...</span>
+    <span class="badge">Up to 50% off</span>
+  </div>
+  <p class="hero-big-disc">UP TO 50% OFF</p>
+</section>
+
+<div class="notice-banner">
+  <div class="notice-banner-inner">
+    <div class="notice-col">
+      <div class="notice-col-label">&#x1F511; Online account holders</div>
+      <a href="https://www.restock.com.au/Super-Specials/pl.php" target="_blank" class="notice-btn login">
+        <span class="notice-btn-title">Your Black Friday pricing is already applied. Log in here to order.</span>
+        <span class="notice-btn-cta">Log in to order &rarr;</span>
+      </a>
+    </div>
+    <div class="notice-col">
+      <div class="notice-col-label">&#x2709; No online account?</div>
+      <button onclick="openDrawer()" class="notice-btn email">
+        <span class="notice-btn-title">Place an order via email &mdash; we&rsquo;ll get it processed for you.</span>
+        <span class="notice-btn-cta">Create an email order &rarr;</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<div id="main-content">
+  <div class="section-wrap">
+    <div class="section-title" id="sec-title">Your Black Friday Specials</div>
+    <div class="grid" id="product-grid"></div>
+  </div>
+</div>
+
+<footer class="footer">
+  <p>&copy; 2026 Restock Pty Ltd &middot; <a href="https://www.restock.com.au" target="_blank">restock.com.au</a> &middot; <a href="tel:1300300188">1300 300 188</a></p>
+  <p style="margin-top:5px">All prices ex GST &middot; Offer ends 11:59pm AEST 4 December 2026 &middot; While stocks last</p>
+  <p style="margin-top:5px">Orders: <a href="mailto:orders@restock.com.au">orders@restock.com.au</a></p>
+</footer>
+
+<div class="drawer-overlay" id="drawer-overlay" onclick="handleOverlay(event)">
+  <div class="drawer" id="drawer">
+    <div class="drawer-handle">
+      <span class="drawer-title">&#x1F4CB; Email Order Form</span>
+      <button class="btn-close" onclick="closeDrawer()">&times;</button>
+    </div>
+    <p class="drawer-intro">Enter quantities for what you need, add your details, then click <strong>Email your order now</strong>. Your email client will open with the order ready to send.</p>
+    <div class="d-rows" id="d-rows"></div>
+    <div class="totals-box" id="totals-box">
+      <div class="trow"><span>Subtotal (ex GST)</span><span id="t-sub">$0.00</span></div>
+      <div class="freight-row" id="freight-row"><span>&#x26A0;&#xFE0F; Freight (ex GST)</span><span>$25.00</span></div>
+      <div class="trow"><span>GST (10%)</span><span id="t-gst">$0.00</span></div>
+      <div class="trow ttotal"><span>Total (inc GST)</span><span id="t-tot">$0.00</span></div>
+      <div class="freight-notice" id="freight-notice"></div>
+      <div style="font-size:.7rem;color:var(--fg3);margin-top:5px">Subject to confirmation of stock availability.</div>
+    </div>
+    <div class="d-form">
+      <h4>Your details</h4>
+      <div class="field-err" id="field-err"></div>
+      <div class="frow"><label>PO Number <span style="font-weight:400;opacity:.7">(optional)</span></label><input id="f-po" type="text" placeholder="e.g. PO-12345"></div>
+      <div class="frow"><label>Name <span style="color:#C0392B">*</span></label><input id="f-name" type="text" placeholder="Your name" oninput="this.style.outline=''"></div>
+      <div class="frow"><label>Company <span style="color:#C0392B">*</span></label><input id="f-co" type="text" placeholder="Company name" oninput="this.style.outline=''"></div>
+      <div class="frow"><label>Phone <span style="color:#C0392B">*</span></label><input id="f-ph" type="tel" placeholder="Phone number" oninput="this.style.outline=''"></div>
+      <div class="frow"><label>Email <span style="color:#C0392B">*</span></label><input id="f-em" type="email" placeholder="your@email.com" oninput="this.style.outline=''"></div>
+      <div class="frow"><label>Notes (delivery address, account number, etc.)</label><textarea id="f-notes" rows="2" placeholder="Optional"></textarea></div>
+    </div>
+    <div class="d-send">
+      <button class="btn-gen" onclick="generateOrder()">&#x2709; Email your order now</button>
+    </div>
+    <p class="send-note">Your order will open as a draft in your default email app, ready to send to orders@restock.com.au</p>
+    <div class="email-generated" id="success">&#x2705; Order email ready! If your email client did not open, copy the text below and paste it to <strong>orders@restock.com.au</strong></div>
+    <pre class="email-pre" id="email-pre"></pre>
+    <button class="btn-copy" id="btn-copy" onclick="copyEmail()">Copy email text</button>
+  </div>
+</div>
+
+<script>
+const IMG='https://cdn.klaviyomail.com/company/RTXMLp/images/';
+const EMAIL='orders@restock.com.au';
+const ENDS='4 December 2026';
+const GROUPS={"01":[2,3,5,6,8,9,10,12,13,14,15,16,17,19,20,26,28,29,30],"02":[2,3,5,8,9,10,11,12,13,14,15,16,17,19,20,26,28,29,30,31],"03":[2,3,5,6,8,9,10,11,12,13,14,15,17,19,20,26,28,29,30,31],"04":[2,3,5,6,8,9,11,12,13,14,15,16,17,19,20,26,28,29,30,31],"05":[2,3,6,8,9,10,11,12,13,14,15,16,17,19,20,26,28,29,30,31],"06":[2,3,5,6,8,9,10,11,12,14,15,16,17,19,20,26,28,29,30,31],"07":[3,5,6,8,9,10,11,12,13,14,15,16,17,19,20,26,28,29,30,31],"08":[2,3,5,6,8,10,11,12,13,14,15,16,17,19,20,26,28,29,30,31],"09":[2,3,5,6,8,9,10,11,12,13,14,16,17,19,20,26,28,29,30,31],"10":[2,3,5,6,8,9,10,11,12,13,14,15,16,17,19,20,26,28,29],"11":[2,3,5,6,8,9,10,11,12,13,14,15,16,17,19,26,28,29,30,31],"12":[2,3,5,6,9,10,11,12,13,14,15,16,17,19,20,26,28,29,30,31],"13":[2,3,5,6,8,9,10,11,12,13,15,16,17,19,20,26,28,29,30,31],"14":[2,3,5,8,9,10,11,12,13,14,15,16,17,19,20,26,28,30,31],"15":[2,3,5,6,8,9,10,11,12,13,14,15,16,17,20,26,28,29,30,31],"16":[2,3,5,6,8,9,10,11,12,13,14,15,16,19,20,26,28,29,30,31],"17":[2,3,5,6,8,9,10,11,12,13,14,15,17,19,20,26,28,29,30,31],"18":[2,5,6,8,9,10,11,12,13,14,15,16,17,19,20,26,28,29,30,31],"19":[2,3,5,6,8,9,10,11,12,13,14,15,16,17,19,20,26,29,30,31],"20":[2,3,5,6,8,9,10,11,12,13,14,15,16,17,19,20,28,29,30,31],"21":[2,3,5,6,8,9,10,11,12,13,14,15,16,17,19,20,26,28,30,31],"22":[2,3,6,8,9,10,11,12,13,14,15,16,17,19,20,26,28,29,30,31],"23":[2,3,5,6,8,9,10,11,13,14,15,16,17,19,20,26,28,29,30,31],"24":[2,3,5,6,8,9,10,11,12,13,14,15,16,17,19,20,26,28,29,31],"25":[2,3,5,6,8,9,10,11,12,13,14,15,16,17,19,20,26,28,29,30],"26":[2,3,5,8,9,10,11,12,13,14,15,16,17,19,20,26,28,29,30,31],"27":[2,3,5,6,8,9,10,11,12,13,15,16,17,19,20,26,28,29,30,31],"28":[2,3,5,6,8,9,10,11,12,13,14,15,16,17,20,26,28,29,30,31],"29":[2,3,5,6,8,9,10,11,12,13,14,15,16,19,20,26,28,29,30,31],"30":[2,3,5,6,9,10,11,12,13,14,15,16,17,19,20,26,28,29,30,31],"31":[2,3,5,6,8,9,10,11,12,14,15,16,17,19,20,26,28,29,30,31],"32":[2,3,5,6,8,9,10,11,12,13,14,15,17,19,20,26,28,29,30,31],"33":[2,3,5,6,8,9,10,11,12,13,14,15,16,17,19,26,28,29,30,31],"34":[2,3,5,6,8,9,10,11,12,13,14,15,16,17,19,20,26,28,30,31],"35":[2,3,5,6,8,9,10,11,12,13,14,15,16,17,19,20,26,29,30,31],"36":[2,3,5,6,8,9,10,11,12,13,14,15,16,17,19,20,28,29,30,31],"37":[2,3,5,6,8,9,10,11,12,13,14,16,17,19,20,26,28,29,30,31],"38":[2,3,5,6,8,9,10,11,12,13,14,15,17,19,20,26,28,29,31],"39":[2,3,5,6,8,9,10,11,12,13,14,15,16,17,20,26,28,29,30],"40":[2,3,5,6,8,9,10,11,12,13,14,15,16,19,20,26,28,29,31],"41":[2,3,5,6,8,9,10,11,12,13,14,15,16,17,19,20,26,28,29],"42":[2,3,5,6,8,9,10,11,12,13,14,15,16,17,19,20,26,28,30],"43":[2,3,5,6,8,9,10,11,12,13,14,15,16,17,19,20,26,29,30],"44":[2,3,5,6,8,9,10,12,13,14,15,16,17,19,20,26,28,29,30],"45":[2,3,5,6,8,9,10,11,12,13,14,15,17,19,20,28,29,30,31],"46":[2,5,6,8,9,10,11,12,13,14,15,16,17,19,20,26,28,29,30]};
+const MASTER={"2":{"name":"Silver Lined Ambidextrous Gloves (50/pk)","desc":"Premium blue silver lined gloves. Diamond grip.","ctn":"10 packs of 50/ctn","img":"d4d01e51-7d8e-4914-b2a7-170728d412b5.jpeg","sizes":[{"c":"651302B","l":"S"},{"c":"651303B","l":"M"},{"c":"651304B","l":"L"},{"c":"651305B","l":"XL"}],"rrp":37.97,"bf":18.99,"disc":50},"3":{"name":"Eco Super Stretch Blue Gloves (200/pk)","desc":"TPE powder-free, food service.","ctn":"10 packs of 200/ctn","img":"e8825ef6-dfd5-40e7-a1a8-604b39e7e64d.jpeg","sizes":[{"c":"651063","l":"M"},{"c":"651064","l":"L"},{"c":"651065","l":"XL"}],"rrp":7.5,"bf":3.75,"disc":50},"5":{"name":"CL25 Carton Liner Blue 630x630x380mm (500/ctn)","desc":"Heavy duty blue carton liner, 25um.","ctn":"500/ctn","img":"9c21d56b-87f8-4ae2-92c7-4a9e08f05212.png","sizes":[{"c":"461653B","l":"461653B"}],"rrp":142.95,"bf":71.48,"disc":50},"6":{"name":"Premium Blue Nitrile Long Cuff Gloves (100/pk)","desc":"Extra-long cuff, latex-free.","ctn":"10 packs of 100/ctn","img":"f3a2067b-59f2-492e-a2aa-4ffda3d68700.jpeg","sizes":[{"c":"651152","l":"S"},{"c":"651153","l":"M"},{"c":"651154","l":"L"}],"rrp":16.16,"bf":8.93,"disc":45},"8":{"name":"PP Coveralls White - 50/ctn","desc":"Breathable PP, 2-way zip. HACCP certified.","ctn":"50/ctn","img":"503655bd-7e41-440f-bff1-74d131a0d9db.jpeg","sizes":[{"c":"770211","l":"S"},{"c":"770212","l":"M"},{"c":"770213","l":"L"},{"c":"770214","l":"XL"},{"c":"770215","l":"2XL"},{"c":"770216","l":"3XL"},{"c":"770218","l":"5XL"}],"rrp":179.0,"bf":89.5,"disc":50},"9":{"name":"Metal Detectable Corded Earplug Class 5 (100/pk)","desc":"Blue foam with metal ball. SLC80 28dB.","ctn":"10 packs of 100/ctn","img":"images_752910-reusable1f470.jpg","sizes":[{"c":"752910","l":"752910"}],"rrp":67.7,"bf":33.85,"disc":50},"10":{"name":"Blue Slimline Hand Towel 200sh 23x23cm (20 pks/ctn)","desc":"Premium blue multifold towel.","ctn":"20 packs/ctn","img":"c1789209-15b0-48ba-8cd8-fce1f900cbd1.jpeg","sizes":[{"c":"517120","l":"517120"}],"rrp":93.68,"bf":50.96,"disc":46},"11":{"name":"PE Hanging Aprons 1550mm Blue (500/ctn)","desc":"Liquid-proof. HACCP certified.","ctn":"500/ctn","img":"8875442c-4058-440d-8704-9cd9c353b734.jpeg","sizes":[{"c":"653044","l":"653044"}],"rrp":79.0,"bf":46.89,"disc":41},"12":{"name":"PP Lab Coat White - Standard (100/ctn)","desc":"HACCP certified. Elastic cuff, velcro.","ctn":"100/ctn","img":"cb2d8441-f72f-4dc4-9062-6a54d1e3e3e7.jpeg","sizes":[{"c":"653105","l":"M"},{"c":"653106","l":"2XL"},{"c":"653107","l":"3XL"},{"c":"653110","l":"5XL"}],"rrp":133.98,"bf":66.99,"disc":50},"13":{"name":"Manual Autocut White Dispenser (each)","desc":"FREE with every 10 ctns of Blue Roll Towel.","ctn":"Each","img":"bd5f7d5c-1a66-46b1-92ed-13cda9dd56bc.jpeg","sizes":[{"c":"407200","l":"407200"}],"rrp":146.15,"bf":75.43,"disc":48},"14":{"name":"Polymer Coated Latex PF Gloves (100/pk)","desc":"Fully textured, superior puncture resistance.","ctn":"10 packs of 100/ctn","img":"341db7ef-2c03-41bc-b4b9-ac8ea9e1fb15.jpeg","sizes":[{"c":"651533","l":"M"},{"c":"651535","l":"L"}],"rrp":9.69,"bf":5.28,"disc":46},"15":{"name":"CE Type 4/5/6 Coveralls White (each)","desc":"Microporous, anti-static. EN certified.","ctn":"50/ctn","img":"12566666-56e8-4e31-a186-d2ea481ae047.jpeg","sizes":[{"c":"770202","l":"M"},{"c":"770203","l":"L"},{"c":"770204","l":"XL"},{"c":"770205","l":"2XL"},{"c":"770206","l":"3XL"}],"rrp":10.83,"bf":5.42,"disc":50},"16":{"name":"Machine Tape Clear 48mmx1000m (6 rolls/ctn)","desc":"Premium rubber adhesive, single-strip sealing.","ctn":"6 rolls/ctn","img":"87a389da-1e07-4f4e-9a73-b819ef135f0c.jpeg","sizes":[{"c":"753532","l":"753532"}],"rrp":189.65,"bf":96.36,"disc":49},"17":{"name":"PP Lab Coat Green - Standard (100/ctn)","desc":"HACCP certified green PP lab coat.","ctn":"100/ctn","img":"4be89920-c1ff-4fe6-aa6c-6397366beca4.jpeg","sizes":[{"c":"653133","l":"M"},{"c":"653134","l":"L"},{"c":"653137","l":"3XL"}],"rrp":222.74,"bf":111.37,"disc":50},"19":{"name":"Eco Machine Stretch Film 500mmx2174m (each)","desc":"Low noise, friction brake wrapping.","ctn":"1 roll/ctn","img":"9390a3ef-e30b-4067-ba45-9a92d25ef853.jpeg","sizes":[{"c":"753528","l":"753528"}],"rrp":124.34,"bf":62.17,"disc":50},"20":{"name":"SMS White Coverall with Hood - Type 5&6 (each)","desc":"Triple-layer SMS, water resistant. HACCP.","ctn":"50/ctn","img":"caab8816-4750-4d7c-bb33-ed63c3057160.jpeg","sizes":[{"c":"770241","l":"XL"},{"c":"770242","l":"2XL"},{"c":"770245","l":"2XL (disc)"}],"rrp":9.55,"bf":5.01,"disc":48},"26":{"name":"FSC Autocut Blue Roll Towel 1ply 300m (6/ctn)","desc":"FSC certified. FREE dispenser with 10 ctns.","ctn":"6 rolls/ctn","img":"bb8fe5a4-6b0a-4fff-9cd2-7dc3b82aa72a.jpeg","sizes":[{"c":"428300","l":"428300"}],"rrp":108.22,"bf":56.84,"disc":47},"28":{"name":"Silver Lined Gloves - S & 2XL (50/pk)","desc":"Premium blue silver lined. Small and 2XL.","ctn":"10 packs of 50/ctn","img":"0ab9dc8a-0256-4841-bfd4-de9ab9ee8258.jpeg","sizes":[{"c":"651302A","l":"S"},{"c":"651306A","l":"2XL"}],"rrp":31.24,"bf":15.82,"disc":49},"29":{"name":"PP Coverall White Singles (each)","desc":"Individual PP coveralls. L / XL / 2XL / 3XL.","ctn":"50/ctn","img":"d744ea05-79d1-4818-9ad9-96261595297e.jpeg","sizes":[{"c":"770213A","l":"L"},{"c":"770214A","l":"XL"},{"c":"770215A","l":"2XL"},{"c":"770216A","l":"3XL"}],"rrp":7.53,"bf":3.77,"disc":50},"30":{"name":"PP Lab Coat Green - Clearance (100/ctn)","desc":"Green lab coat clearance stock. M-7XL.","ctn":"100/ctn","img":"4be89920-c1ff-4fe6-aa6c-6397366beca4.jpeg","sizes":[{"c":"653133A","l":"M"},{"c":"653134A","l":"L"},{"c":"653135A","l":"XL"},{"c":"653136A","l":"2XL"},{"c":"653137A","l":"3XL"},{"c":"653138A","l":"5XL"},{"c":"653139A","l":"7XL"}],"rrp":222.74,"bf":111.38,"disc":50},"31":{"name":"PP Lab Coat White - Clearance (100/ctn)","desc":"White lab coat clearance. L / XL / 3XL / 5XL.","ctn":"100/ctn","img":"cb2d8441-f72f-4dc4-9062-6a54d1e3e3e7.jpeg","sizes":[{"c":"653104A","l":"L"},{"c":"653104F","l":"L (F)"},{"c":"653105F","l":"XL"},{"c":"653107C","l":"3XL"},{"c":"653108A","l":"5XL"}],"rrp":131.09,"bf":86.89,"disc":34}};
+
+function fmt(n){return'$'+n.toFixed(2);}
+const params=new URLSearchParams(window.location.search);
+const grpRaw=(params.get('g')||'').replace(/\D/g,'').padStart(2,'0');
+const famIds=GROUPS[grpRaw];
+
+function showError(msg){document.getElementById('main-content').innerHTML='<div class="err-box">'+msg+'</div>';}
+
+if(!famIds){
+  showError('Invalid or missing group code. Please use the link from your email.');
+} else {
+  const products=famIds.map(id=>({id,...MASTER[id]})).filter(p=>p.name);
+  document.getElementById('badge-count').textContent=products.length+' products';
+  document.getElementById('hero-eyebrow').textContent='Black Friday 2026 · Group '+grpRaw+' Specials';
+  document.getElementById('sec-title').textContent='Your Black Friday Specials — Group '+grpRaw;
+
+  // Render product grid
+  document.getElementById('product-grid').innerHTML=products.map(p=>{
+    const src=p.img?IMG+p.img:null;
+    const imgEl=src?'<img src="'+src+'" alt="'+p.name+'" loading="lazy" onerror="this.parentNode.innerHTML=\'<div class=no-img>'+p.id+'</div>\'">'
+      :'<div class="no-img">'+p.id+'</div>';
+    const chips=p.sizes.map(s=>{
+      const lbl=s.l===s.c?s.c:s.l+' <span style="font-weight:400;opacity:.7">'+s.c+'</span>';
+      return '<span class="chip">'+lbl+'</span>';
+    }).join('');
+    return '<div class="card"><div class="card-img">'+imgEl+'</div>'
+      +'<div class="card-body"><div class="card-name">'+p.name+'</div>'
+      +'<div class="card-desc">'+p.desc+'</div>'
+      +'<div class="chips">'+chips+'</div>'
+      +'<div class="card-price"><div class="price-was-now"><span class="price-rrp">RRP '+fmt(p.rrp)+'</span><span class="price-bf">'+fmt(p.bf)+'</span></div>'
+      +(p.disc>0?'<span class="price-disc">'+p.disc+'% off</span>':'')+'</div></div>'
+      +'<div class="card-actions">'
+      +'<a class="btn-web" href="https://www.restock.com.au/Super-Specials/pl.php" target="_blank">&#x1F511; Log in &amp; order</a>'
+      +'<button class="btn-email-order" onclick="openDrawerTo('+p.id+')">&#x2709; Email order</button>'
+      +'</div></div>';
+  }).join('');
+
+  // Render order drawer rows
+  document.getElementById('d-rows').innerHTML=products.map(p=>{
+    const src=p.img?IMG+p.img:null;
+    const thumb=src?'<img src="'+src+'" alt="" loading="lazy" onerror="this.style.display=\'none\'">'
+      :'<span style="font-size:.7rem;color:var(--fg3)">'+p.id+'</span>';
+    const srows=(p.ctn?'<div class="ctn-note">'+p.ctn+'</div>':'')+p.sizes.map(s=>{
+      const uom=p.ctn?(p.ctn.toLowerCase().includes('pack')?'packs':p.ctn.toLowerCase().includes('roll')?'rolls':p.ctn.toLowerCase().includes('each')||p.ctn.toLowerCase().includes('individual')?'each':'ctns'):'';
+      const lbl=p.sizes.length===1?'<span style="font-weight:600">'+s.c+'</span>':'<span style="font-weight:600">'+s.l+'</span><span class="scode">'+s.c+'</span>';
+      return '<div class="srow"><span class="slabel">'+lbl+'</span>'
+        +'<button class="sqbtn" onclick="adj(\''+p.id+'\',\''+s.c+'\',-1)">&#8722;</button>'
+        +'<input class="sqinp" type="number" min="0" value="0" id="sq-'+p.id+'-'+s.c+'" oninput="recalc()">'
+        +'<button class="sqbtn" onclick="adj(\''+p.id+'\',\''+s.c+'\',1)">+</button>'
+        +(uom?'<span class="sea">'+uom+'</span>':'')
+        +'<span class="sea">'+fmt(p.bf)+'</span></div>';
+    }).join('');
+    return '<div class="prow" id="prow-'+p.id+'">'
+      +'<div class="prow-hdr"><div class="pthumb">'+thumb+'</div>'
+      +'<div style="flex:1;min-width:0"><div class="pname">'+p.name+'</div>'
+      +'<div class="pprice">'+fmt(p.bf)+' ea'+(p.disc>0?' &middot; '+p.disc+'% off':'')+'</div></div></div>'
+      +srows+'</div>';
+  }).join('');
+}
+
+function adj(pid,code,d){const el=document.getElementById('sq-'+pid+'-'+code);if(el){el.value=Math.max(0,(parseInt(el.value)||0)+d);recalc();}}
+
+function recalc(){
+  if(!famIds)return;
+  const products=famIds.map(id=>({id,...MASTER[id]})).filter(p=>p.name);
+  let sub=0;
+  products.forEach(p=>p.sizes.forEach(s=>{const qty=parseInt(document.getElementById('sq-'+p.id+'-'+s.c)?.value)||0;sub+=qty*p.bf;}));
+  const freeFreight=sub>=200;
+  const freight=(!freeFreight&&sub>0)?25:0;
+  const gst=(sub+freight)*0.1;
+  const tot=sub+freight+gst;
+  document.getElementById('t-sub').textContent=fmt(sub);
+  document.getElementById('t-gst').textContent=fmt(gst);
+  document.getElementById('t-tot').textContent=fmt(tot);
+  document.getElementById('totals-box').style.display=sub>0?'block':'none';
+  const fr=document.getElementById('freight-row');
+  if(fr)fr.style.display=freight>0?'flex':'none';
+  const fn=document.getElementById('freight-notice');
+  if(fn&&sub>0){
+    if(freeFreight){fn.style.background='var(--green-bg)';fn.style.color='var(--green)';fn.style.border='1px solid var(--green)';fn.innerHTML='&#x2705; <strong>Free freight</strong> on this order. Outside metro areas freight will be confirmed before dispatch.';}
+    else{fn.style.background='#FFF8EC';fn.style.color='#8B5000';fn.style.border='1px solid #F5C069';fn.innerHTML='&#x26A0;&#xFE0F; <strong>$25 freight</strong> (ex GST) added — add '+fmt(200-sub)+' more to qualify for free freight.<br><span style="font-weight:400;font-size:.77rem">Outside metro areas: freight will be confirmed before dispatch.</span>';}
+    fn.style.display='block';
+  } else if(fn){fn.style.display='none';}
+}
+
+function openDrawer(){document.getElementById('drawer-overlay').classList.add('open');document.body.style.overflow='hidden';}
+function openDrawerTo(id){
+  openDrawer();
+  setTimeout(()=>{
+    document.querySelectorAll('.prow.highlighted').forEach(el=>el.classList.remove('highlighted'));
+    document.querySelectorAll('.prow.highlighted-soft').forEach(el=>el.classList.remove('highlighted-soft'));
+    const el=document.getElementById('prow-'+id);
+    if(el){el.scrollIntoView({behavior:'smooth',block:'center'});el.classList.add('highlighted');setTimeout(()=>{el.classList.remove('highlighted');el.classList.add('highlighted-soft');},2000);}
+  },150);
+}
+function closeDrawer(){
+  document.getElementById('drawer-overlay').classList.remove('open');
+  document.body.style.overflow='';
+  document.querySelectorAll('.prow.highlighted,.prow.highlighted-soft').forEach(el=>el.classList.remove('highlighted','highlighted-soft'));
+}
+function handleOverlay(e){if(e.target===document.getElementById('drawer-overlay'))closeDrawer();}
+
+function validateFields(){
+  const fields=[{id:'f-name',label:'Name'},{id:'f-co',label:'Company name'},{id:'f-ph',label:'Phone'},{id:'f-em',label:'Email address'}];
+  for(const f of fields){
+    const el=document.getElementById(f.id);
+    if(!el.value.trim()){el.style.outline='2px solid #C0392B';el.focus();el.scrollIntoView({behavior:'smooth',block:'center'});const err=document.getElementById('field-err');err.textContent=f.label+' is required.';err.style.display='block';return false;}
+    else{el.style.outline='';}
+  }
+  document.getElementById('field-err').style.display='none';
+  return true;
+}
+
+function generateOrder(){
+  if(!famIds)return;
+  if(!validateFields())return;
+  const products=famIds.map(id=>({id,...MASTER[id]})).filter(p=>p.name);
+  const po=document.getElementById('f-po').value.trim();
+  const name=document.getElementById('f-name').value.trim();
+  const co=document.getElementById('f-co').value.trim();
+  const ph=document.getElementById('f-ph').value.trim();
+  const em=document.getElementById('f-em').value.trim();
+  const notes=document.getElementById('f-notes').value.trim();
+  const lines=[];let sub=0;
+  products.forEach(p=>{
+    const sl=p.sizes.map(s=>{const qty=parseInt(document.getElementById('sq-'+p.id+'-'+s.c)?.value)||0;if(qty>0){sub+=qty*p.bf;return'    '+(p.sizes.length>1?s.l+' ('+s.c+')':s.c)+': Qty '+qty;}return null;}).filter(Boolean);
+    if(sl.length){lines.push('  - '+p.name+'  |  BF: '+fmt(p.bf)+' ea');sl.forEach(l=>lines.push(l));}
+  });
+  if(!lines.length){alert('Please enter a quantity for at least one item.');return;}
+  const freeFreight=sub>=200;
+  const freight=freeFreight?0:25;
+  const gst=(sub+freight)*0.1;
+  const tot=sub+freight+gst;
+  const freightLine=freight>0?'  Freight (ex GST):  $25.00':null;
+  const body=['BLACK FRIDAY ORDER - Your Specials (Group '+grpRaw+')','Offer ends '+ENDS,'','FROM:','  Name: '+name,'  Company: '+co,po?'  PO Number: '+po:null,'  Phone: '+ph,'  Email: '+em,notes?'  Notes: '+notes:null,'','ORDER:',...lines,'','  Subtotal (ex GST):  '+fmt(sub),freightLine,'  GST (10%):          '+fmt(gst),'  TOTAL (inc GST):    '+fmt(tot),'',freeFreight?'Freight: FREE (order over $200 ex GST)':'Freight: $25.00 ex GST','Outside metro areas: freight to be confirmed before dispatch.','','All prices AUD ex GST. Subject to stock availability.'].filter(l=>l!==null).join('\n');
+  const subj='Black Friday Order - '+(co||name)+' (Group '+grpRaw+')';
+  const mailtoUrl='mailto:'+EMAIL+'?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(body);
+  const fullText='TO: '+EMAIL+'\nSUBJECT: '+subj+'\n\n'+body;
+  const a=document.createElement('a');a.href=mailtoUrl;a.style.display='none';document.body.appendChild(a);a.click();document.body.removeChild(a);
+  document.getElementById('email-pre').textContent=fullText;
+  document.getElementById('success').classList.add('show');
+  document.getElementById('email-pre').classList.add('show');
+  document.getElementById('btn-copy').classList.add('show');
+}
+function copyEmail(){const t=document.getElementById('email-pre').textContent;navigator.clipboard.writeText(t).then(()=>{const b=document.getElementById('btn-copy');b.textContent='Copied!';setTimeout(()=>{b.textContent='Copy email text';},2000);}).catch(()=>{});}
+</script>
