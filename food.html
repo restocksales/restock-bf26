@@ -63,7 +63,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .card-img .no-img { font-size: 2rem; color: var(--fg3); font-family: var(--font-cond); font-weight: 700; }
 .disc-badge { position: absolute; top: 10px; right: 10px; background: var(--accent); color: #fff; font-size: .78rem; font-weight: 800; border-radius: 7px; padding: 5px 8px; text-align: center; line-height: 1.2; z-index: 1; }
 .card-body { padding: 14px 16px 16px; flex: 1; display: flex; flex-direction: column; gap: 8px; background: #fff; }
-.brand-badge { display:inline-block; font-size:.6rem; font-weight:800; letter-spacing:.08em; text-transform:uppercase; border-radius:3px; padding:2px 6px; margin-bottom:4px; color:#fff; }
+.brand-logo { height:20px; width:auto; margin-bottom:6px; display:block; }
 .card-name { font-weight: 700; font-size: .95rem; line-height: 1.3; color: var(--fg); }
 .card-desc { font-size: .82rem; color: var(--fg2); line-height: 1.4; }
 .card-sizes { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 2px; }
@@ -204,11 +204,11 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 </div>
 
 <script>
-const BRAND_COLORS = {
-  'Protectaware': '#1A5276',
-  'Durelle': '#1E6B3A',
-  'Durapak': '#6C3483',
-  'Assorted Brands': '#555759',
+const BRAND_LOGOS = {
+  'Protectaware': 'https://tmj1989123.github.io/restock-bf26/logos/protectaware.png',
+  'Durelle': 'https://tmj1989123.github.io/restock-bf26/logos/durelle.png',
+  'Durapak': 'https://tmj1989123.github.io/restock-bf26/logos/durapak.png',
+  'Eurosan': 'https://tmj1989123.github.io/restock-bf26/logos/eurosan.png',
 };
 const IMG_BASE = 'https://www.restock.com.au/productimages/';
 const ORDERS_EMAIL = 'orders@restock.com.au';
@@ -284,7 +284,7 @@ function renderGrid(){
       return `<span class="size-chip">${lbl}</span>`;
     }).join('');
     const webBtn = p.webCode ? `<a class="btn-web" href="${WEB_URL(p.webCode)}" target="_blank">🔑 Log in &amp; order</a>` : `<a class="btn-web" href="https://www.restock.com.au/site/pages/login.php" target="_blank">🔑 Log in &amp; order</a>`;
-    return `<div class="card"><div class="card-img">${imgEl}${p.disc>0?`<div class="disc-badge">${p.disc}%<br>off</div>`:''}</div><div class="card-body">${p.brand?`<span class="brand-badge" style="background:${BRAND_COLORS[p.brand]||'#555'}">${p.brand}</span>`:''}<div class="card-name">${p.name}</div><div class="card-desc">${p.desc}</div><div class="card-sizes">${chips}</div><div class="card-price"><div class="price-was">Was ${fmt(p.rrp)}</div><div class="price-bf">${fmt(p.bf)}</div></div></div><div class="card-actions">${webBtn}<button class="btn-email-order" onclick="openDrawerTo(${p.id})">✉ Email order</button></div></div>`;
+    return `<div class="card"><div class="card-img">${imgEl}${p.disc>0?`<div class="disc-badge">${p.disc}%<br>off</div>`:''}</div><div class="card-body">${p.brand&&BRAND_LOGOS[p.brand]?`<img class="brand-logo" src="${BRAND_LOGOS[p.brand]}" alt="${p.brand}">`:p.brand?`<span style="font-size:.65rem;font-weight:700;color:#555;text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;display:block">${p.brand}</span>`:''}<div class="card-name">${p.name}</div><div class="card-desc">${p.desc}</div><div class="card-sizes">${chips}</div><div class="card-price"><div class="price-was">Was ${fmt(p.rrp)}</div><div class="price-bf">${fmt(p.bf)}</div></div></div><div class="card-actions">${webBtn}<button class="btn-email-order" onclick="openDrawerTo(${p.id})">✉ Email order</button></div></div>`;
   }).join('');
 }
 
