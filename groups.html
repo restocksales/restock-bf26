@@ -235,7 +235,7 @@ if(!famIds){
       return '<span class="chip">'+lbl+'</span>';
     }).join('');
     return '<div class="card"><div class="card-img">'+imgEl+(p.disc>0?'<div class="disc-badge">'+p.disc+'%<br>off</div>':'')+'</div>'
-      +'<div class="card-body">'+(p.brand&&BRAND_LOGOS[p.brand]?'<div style="width:120px;height:24px;margin-bottom:5px;overflow:hidden;"><img src="'+BRAND_LOGOS[p.brand]+'" alt="'+p.brand+'" style="height:24px;width:auto;max-width:none;display:block;"></div>':p.brand&&p.brand==='BYD'?'<span style="font-size:.62rem;font-weight:700;color:#555;text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;display:block">BYD</span>':p.brand&&p.brand==='Assorted Brands'?'<span style="font-size:.62rem;font-weight:700;color:#555;text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;display:block">Assorted Brands</span>':'')+'<div class="card-name">'+p.name+'</div>'
+      +'<div class="card-body">'+(p.brand&&BRAND_LOGOS[p.brand]?'<div style="width:160px;height:24px;margin-bottom:5px;overflow:hidden;"><img src="'+BRAND_LOGOS[p.brand]+'" alt="'+p.brand+'" style="height:24px;width:auto;max-width:none;display:block;"></div>':p.brand&&p.brand==='BYD'?'<span style="font-size:.78rem;font-weight:800;color:#555;letter-spacing:.06em;margin-bottom:6px;display:block">BYD</span>':p.brand&&p.brand==='Assorted Brands'?'<span style="font-size:.78rem;font-weight:800;color:#555;letter-spacing:.06em;margin-bottom:6px;display:block">Assorted Brands</span>':'')+'<div class="card-name">'+p.name+'</div>'
       +'<div class="card-desc">'+p.desc+'</div>'
       +'<div class="chips">'+chips+'</div>'
       +'<div class="card-price"><div class="price-was-now"><span class="price-rrp">RRP '+fmt(p.rrp)+'</span><span class="price-bf">'+fmt(p.bf)+'</span></div>'
