@@ -63,6 +63,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .card:hover .card-img img { transform: scale(1.04); }
 .card-img .no-img { font-size: 2rem; color: var(--fg3); font-family: var(--font-cond); font-weight: 700; }
 .disc-badge { position: absolute; top: 10px; right: 10px; background: var(--accent); color: #fff; font-size: .78rem; font-weight: 800; border-radius: 7px; padding: 5px 8px; text-align: center; line-height: 1.2; z-index: 1; }
+.brand-logo { height:22px !important; width:auto !important; max-width:none !important; margin-bottom:6px; display:block; }
 .card-body { padding: 14px 16px 16px; flex: 1; display: flex; flex-direction: column; gap: 8px; background: #fff; }
 .card-name { font-weight: 700; font-size: .95rem; line-height: 1.3; color: var(--fg); }
 .card-desc { font-size: .82rem; color: var(--fg2); line-height: 1.4; }
@@ -202,6 +203,12 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 </div>
 
 <script>
+const BRAND_LOGOS = {
+  'Protectaware': 'https://cdn.klaviyomail.com/company/RTXMLp/images/a26e353a-903f-4b07-bf98-5703f81d1778.png',
+  'Durelle': 'https://cdn.klaviyomail.com/company/RTXMLp/images/a0c132e5-31b1-422a-aea4-e0b210db5862.png',
+  'Durapak': 'https://cdn.klaviyomail.com/company/RTXMLp/images/9e1c90ef-0741-469b-b93d-022cf80a0221.png',
+  'Eurosan': 'https://cdn.klaviyomail.com/company/RTXMLp/images/99aab734-bdb5-4d07-a29c-1952a1e3979f.png',
+};
 const IMG_BASE = 'https://www.restock.com.au/productimages/';
 const ORDERS_EMAIL = 'orders@restock.com.au';
 const OFFER_ENDS = '4 December 2026';
@@ -220,16 +227,16 @@ const PRODUCT_URLS = {
 const WEB_URL = (code) => 'https://www.restock.com.au/Super-Specials/pl.php';
 
 const products = [
-  { id:1, name:"Level 2 Isolation Gown Blue PP+PE (100/ctn)", desc:"AAMI Level 2. PP+PE 43gsm. Knitted cuffs, waist and neck ties. ARTG Listed.", ctn:"100 per carton", sizes:[{code:"653412B",label:"653412B"}], img:"653412B", onWeb:false, webCode:null, rrp:333.98, bf:166.99, disc:50 },
-  { id:2, name:"Eco Super Stretch Blue Gloves (200/pk)", desc:"TPE powder-free. Lightweight, ideal for care settings. ARTG Listed.", ctn:"10 packs of 200 per carton", sizes:[{code:"651063",label:"M"},{code:"651064",label:"L"},{code:"651065",label:"XL"}], img:"651064", onWeb:true, webCode:"651064", rrp:7.50, bf:3.75, disc:50 },
-  { id:3, name:"N95 BYD NIOSH Respirator Flat Fold Blue (20/pk)", desc:"95% filter efficiency, 160mmHg fluid resistance. FFP2 NR. Expiry 2028. NIOSH Approved & ARTG Listed.", ctn:"20 per pack", sizes:[{code:"750214B",label:"750214B"}], img:"750214B", onWeb:true, webCode:"750214B", rrp:35.16, bf:17.58, disc:50 },
-  { id:4, name:"Level 2 Isolation Gown Yellow PP+PE (100/ctn)", desc:"AAMI Level 2, TGA approved. Knitted cuffs, waist and neck ties. ARTG Listed.", ctn:"100 per carton", sizes:[{code:"653414B",label:"653414B"}], img:"653414B", onWeb:false, webCode:null, rrp:233.14, bf:116.57, disc:50 },
-  { id:5, name:"Premium Blue Nitrile Long Cuff Gloves (100/pk)", desc:"Extra-long cuff for clinical and care settings. Latex-free, roll beaded cuff.", ctn:"10 packs of 100 per carton", sizes:[{code:"651152",label:"S"},{code:"651153",label:"M"},{code:"651154",label:"L"}], img:"651154", onWeb:true, webCode:"651154", rrp:16.16, bf:8.93, disc:45 },
-  { id:6, name:"Blue Slimline Hand Towel 200 sheets 23x23cm (20 pks/ctn)", desc:"Premium blue multifold towel. Soft, strong, absorbent.", ctn:"20 packs per carton", sizes:[{code:"517120",label:"517120"}], img:"517120", onWeb:true, webCode:"517120", rrp:93.68, bf:50.96, disc:46 },
-  { id:7, name:"Manual Autocut White Dispenser (each)", desc:"Sheet-by-sheet, hygienic dispensing. FREE with every 10 cartons of Blue Roll Towel.", ctn:"Sold individually", sizes:[{code:"407200",label:"407200"}], img:"407200", onWeb:true, webCode:"407200", rrp:146.15, bf:75.43, disc:48 },
-  { id:8, name:"Polymer Coated Latex PF Gloves (100/pk)", desc:"Fully textured, superior puncture resistance. ARTG Listed.", ctn:"10 packs of 100 per carton", sizes:[{code:"651533",label:"M"},{code:"651535",label:"L"}], img:"651533", onWeb:true, webCode:"651533", rrp:9.69, bf:5.28, disc:46 },
-  { id:9, name:"FSC Autocut Blue Roll Towel 1ply 300m (6 rolls/ctn)", desc:"FSC certified, single-sheet dispensing reduces waste. FREE dispenser with 10 ctns.", ctn:"6 rolls per carton", sizes:[{code:"428300",label:"428300"}], img:"428300", onWeb:true, webCode:"428300", rrp:108.22, bf:56.84, disc:47 },
-  { id:10, name:"Level 2 Isolation Gown Blue PP Singles (50/ctn)", desc:"Level 2 blue gown, 50 per carton. Knitted cuffs, waist and neck ties. ARTG Listed.", ctn:"50 per carton", sizes:[{code:"653412A",label:"653412A"}], img:"653412A", onWeb:true, webCode:"653412A", rrp:209.00, bf:104.50, disc:50 },
+  { id:1, brand:"Protectaware", name:"Level 2 Isolation Gown Blue PP+PE (100/ctn)", desc:"AAMI Level 2. PP+PE 43gsm. Knitted cuffs, waist and neck ties. ARTG Listed.", ctn:"100 per carton", sizes:[{code:"653412B",label:"653412B"}], img:"653412B", onWeb:false, webCode:null, rrp:333.98, bf:166.99, disc:50 },
+  { id:2, brand:"Protectaware", name:"Eco Super Stretch Blue Gloves (200/pk)", desc:"TPE powder-free. Lightweight, ideal for care settings. ARTG Listed.", ctn:"10 packs of 200 per carton", sizes:[{code:"651063",label:"M"},{code:"651064",label:"L"},{code:"651065",label:"XL"}], img:"651064", onWeb:true, webCode:"651064", rrp:7.50, bf:3.75, disc:50 },
+  { id:3, brand:"Protectaware", name:"N95 BYD NIOSH Respirator Flat Fold Blue (20/pk)", desc:"95% filter efficiency, 160mmHg fluid resistance. FFP2 NR. Expiry 2028. NIOSH Approved & ARTG Listed.", ctn:"20 per pack", sizes:[{code:"750214B",label:"750214B"}], img:"750214B", onWeb:true, webCode:"750214B", rrp:35.16, bf:17.58, disc:50 },
+  { id:4, brand:"Protectaware", name:"Level 2 Isolation Gown Yellow PP+PE (100/ctn)", desc:"AAMI Level 2, TGA approved. Knitted cuffs, waist and neck ties. ARTG Listed.", ctn:"100 per carton", sizes:[{code:"653414B",label:"653414B"}], img:"653414B", onWeb:false, webCode:null, rrp:233.14, bf:116.57, disc:50 },
+  { id:5, brand:"Protectaware", name:"Premium Blue Nitrile Long Cuff Gloves (100/pk)", desc:"Extra-long cuff for clinical and care settings. Latex-free, roll beaded cuff.", ctn:"10 packs of 100 per carton", sizes:[{code:"651152",label:"S"},{code:"651153",label:"M"},{code:"651154",label:"L"}], img:"651154", onWeb:true, webCode:"651154", rrp:16.16, bf:8.93, disc:45 },
+  { id:6, brand:"Protectaware", name:"Blue Slimline Hand Towel 200 sheets 23x23cm (20 pks/ctn)", desc:"Premium blue multifold towel. Soft, strong, absorbent.", ctn:"20 packs per carton", sizes:[{code:"517120",label:"517120"}], img:"517120", onWeb:true, webCode:"517120", rrp:93.68, bf:50.96, disc:46 },
+  { id:7, brand:"Protectaware", name:"Manual Autocut White Dispenser (each)", desc:"Sheet-by-sheet, hygienic dispensing. FREE with every 10 cartons of Blue Roll Towel.", ctn:"Sold individually", sizes:[{code:"407200",label:"407200"}], img:"407200", onWeb:true, webCode:"407200", rrp:146.15, bf:75.43, disc:48 },
+  { id:8, brand:"Protectaware", name:"Polymer Coated Latex PF Gloves (100/pk)", desc:"Fully textured, superior puncture resistance. ARTG Listed.", ctn:"10 packs of 100 per carton", sizes:[{code:"651533",label:"M"},{code:"651535",label:"L"}], img:"651533", onWeb:true, webCode:"651533", rrp:9.69, bf:5.28, disc:46 },
+  { id:9, brand:"Protectaware", name:"FSC Autocut Blue Roll Towel 1ply 300m (6 rolls/ctn)", desc:"FSC certified, single-sheet dispensing reduces waste. FREE dispenser with 10 ctns.", ctn:"6 rolls per carton", sizes:[{code:"428300",label:"428300"}], img:"428300", onWeb:true, webCode:"428300", rrp:108.22, bf:56.84, disc:47 },
+  { id:10, brand:"Protectaware", name:"Level 2 Isolation Gown Blue PP Singles (50/ctn)", desc:"Level 2 blue gown, 50 per carton. Knitted cuffs, waist and neck ties. ARTG Listed.", ctn:"50 per carton", sizes:[{code:"653412A",label:"653412A"}], img:"653412A", onWeb:true, webCode:"653412A", rrp:209.00, bf:104.50, disc:50 },
 ]
 
 function fmt(n){ return '$'+n.toFixed(2); }
@@ -244,7 +251,7 @@ function renderGrid(){
       return `<span class="size-chip">${lbl}</span>`;
     }).join('');
     const webBtn = p.webCode ? `<a class="btn-web" href="${WEB_URL(p.webCode)}" target="_blank">🔑 Log in &amp; order</a>` : `<a class="btn-web" href="https://www.restock.com.au/site/pages/login.php" target="_blank">🔑 Log in &amp; order</a>`;
-    return `<div class="card"><div class="card-img">${imgEl}${p.disc>0?`<div class="disc-badge">${p.disc}%<br>off</div>`:''}</div><div class="card-body"><div class="card-name">${p.name}</div><div class="card-desc">${p.desc}</div><div class="card-sizes">${chips}</div><div class="card-price"><div class="price-was">Was ${fmt(p.rrp)}</div><div class="price-bf">${fmt(p.bf)}</div></div></div><div class="card-actions">${webBtn}<button class="btn-email-order" onclick="openDrawerTo(${p.id})">✉ Email order</button></div></div>`;
+    return `<div class="card"><div class="card-img">${imgEl}${p.disc>0?`<div class="disc-badge">${p.disc}%<br>off</div>`:''}</div><div class="card-body">${p.brand&&BRAND_LOGOS[p.brand]?`<img class="brand-logo" src="${BRAND_LOGOS[p.brand]}" alt="${p.brand}">`:''}<div class="card-name">${p.name}</div><div class="card-desc">${p.desc}</div><div class="card-sizes">${chips}</div><div class="card-price"><div class="price-was">Was ${fmt(p.rrp)}</div><div class="price-bf">${fmt(p.bf)}</div></div></div><div class="card-actions">${webBtn}<button class="btn-email-order" onclick="openDrawerTo(${p.id})">✉ Email order</button></div></div>`;
   }).join('');
 }
 
